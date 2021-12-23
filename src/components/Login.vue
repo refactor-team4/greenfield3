@@ -1,233 +1,49 @@
 <template>
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aguafina+Script" />
-<body>
-	<div class="container">
-		<div class="login-container">
-			<div class="login-container-img">
-				<h1>Welcome to
-					<span>your site</span>
-				</h1>
-			</div>
-			
-			<div class="login-container-content">
-				<form @submit.prevent="login"  class="login-form">
-					<button type="button" class="buttonX">X</button>
-					<h1>Login</h1>
-				<p id="error">{{this.error}}</p>
-					<p class="field">
-						<label>User name </label>
-						<input type="text" name="username" placeholder="user" v-model="username"/>
-					</p>
-					<p class="field">
-						<label>Password</label>
-						<input type="password" name="password" placeholder="password" v-model="password"/>
-					</p>
-					<button type="submit" class="submitBtn" id="clicka">Sign in</button>
-					<div class="parting-line"><span>or</span></div>
-					
-				</form>
-			</div>
-		</div>
-	</div>
-</body>
-	</template>
-<script>
-import axios from 'axios';
-export default {
-data(){
-    return {
-        username:'',
-        password:'',
-		error:""
-        }    
-},
-    methods:{
-        login(){
-        console.log(this.username)
-        axios.post('http://localhost:5000/admin/login',{username:this.username,password:this.password})
-       .then(({data}) => {
-        if (data === "this user does not exist") {
-          this.error=data
-        } else if (data === 'password is wrong') {
-          this.error=data
-        } else {
-          console.log(data)
-		}})}}}
-
-</script>
-<style>
-body {
-position: absolute;
-top: 50%;
-left: 50%;
-background: Silver;
-transform: translate(-50%, -50%);
-}
-#error{color: crimson;}
-#clicka{cursor: pointer;}
- .login-container {
-width: 640px;
-height: 400px;
-display: flex;
-}
- .field-text, .login-container-content .login-form .field > label, .login-container-content .login-form .field > a, .login-container-content .login-form .parting-line {
-font-size: 5px;
-color: #a7a7a7;
-}
- .login-container-content {
-flex: 50%;
-background: white;
-text-align: center;
-display: flex;
-align-items: center;
-border-top-right-radius: 15px;
-border-bottom-right-radius: 15px;
-}
- .login-container-content .login-form {
-padding: 2px;
-width: 100%;
-}
- .login-container-content .login-form .buttonX {
-position: absolute;
-right: 2%;
-top: 2%;
-border: none;
-background: transparent;
-outline: none;
-}
- .login-container-content .login-form h1 {
-letter-spacing: 1rem;
-color: transparent;
--webkit-background-clip: text;
-background-clip: text;
-background-image: linear-gradient(45deg, #6767ed 45%, #4daef2 75%);
-font-family: "Aguafina Script", Arial, Helvetica, sans-serif;
-}
- .login-container-content .login-form .field {
-margin: 10px auto;
-padding: 5px;
-width: 75%;
-height: 25%;
-display: grid;
-grid-row-gap: 0.2rem;
-}
- .login-container-content .login-form .field > label, .login-container-content .login-form .field > input {
-text-align: left;
-}
- .login-container-content .login-form .field > input {
-outline: none;
-border-top: none;
-border-left: none;
-border-right: none;
-border-bottom: 1px solid grey;
-}
- .login-container-content .login-form .field > input:focus {
-border-bottom-color: #1838e7;
-}
- .login-container-content .login-form .field > a {
-text-align: right;
-text-decoration: none;
-}
- .login-container-content .login-form > .submitBtn {
-width: 75%;
-height: 2rem;
-position: relative;
-background: linear-gradient(135deg, rgba(60, 231, 123, 1) 0%, rgba(0, 142, 255, 1) 70%);
-color: white;
-outline: none;
-border-style: none;
-border-radius: 15px;
-transition: 0.3s ease-in-out;
-}
- .login-container-content .login-form > .submitBtn:hover {
-filter: hue-rotate(45deg);
-}
- .login-container-content .login-form .parting-line {
-position: relative;
-margin-top: 1rem;
-margin-bottom: 1rem;
-margin-left: 2.5rem;
-margin-right: 2.5rem;
-overflow: hidden;
-}
- .login-container-content .login-form .parting-line::before, .login-container-content .login-form .parting-line::after {
-content: '';
-position: absolute;
-top: 50%;
-width: 45%;
-display: block;
-text-align: center;
-border-top: 1px solid;
-}
- .login-container-content .login-form .parting-line::before {
-right: 55%;
-}
- .login-container-content .login-form .parting-line::after {
-right: 0%;
-}
- .login-container-img {
-flex: 50%;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-background: url('https://i.picsum.photos/id/790/640/480.jpg?hmac=36IMkSyZ2xG_tyQHUuwXSuGHOHgBHLuzD3_9rHM3SSk');
-background-size: cover;
-border-top-left-radius: 15px;
-border-bottom-left-radius: 15px;
-}
- .login-container-img > h1 {
-display: grid;
-text-align: center;
-color: white;
-margin-top: 50%;
-padding-left: 20px;
-padding-right: 20px;
-letter-spacing: 2px;
-margin-bottom: 10px;
-}
- .login-container-img > h1 > span {
-text-align: center;
-font-size: 16px;
-}
- .container {
-box-shadow: 0 0 15px 5px;
-border-radius: 15px;
-}
- .google-icon {
-position: relative;
-max-width: 1.5rem;
-max-height: 1.5rem;
-height: 1.5rem;
-width: 1.5rem;
-top: 0px;
-left: 9px;
 	
-z-index: 2;
-}
- .google-background {
-padding: 5px;
-margin-top: 1rem;
-margin-bottom: 1rem;
-margin-left: 2.5rem;
-margin-right: 2.5rem;
-position: relative;
-height: 1.5rem;
-background: #46a3ff;
-border-radius: 15px;
-display: flex;
-align-items: center;
-justify-content: center;
-z-index: 1;
-}
- .google-background::before {
-content: '';
-position: absolute;
-top: calc(0px + 3px);
-left: calc(9px + 3px);
-width: calc(1.5rem + 0.3rem);
-height: calc(1.5rem + 0.3rem);
-background: white;
-border-radius: 15px;
-z-index: -1;
-}
+  <div class="login" style="background-image: url('assets/img/home_img/mountain.jpg');height:100vh"  >
+    
 
- 
-</style>
+    <div class="main">
+      <div class="form-box">
+        <div class="form-head">
+          <div class="mold-logo">
+            <div class="mold">Mold</div>
+            <div class="logo"></div>
+            <div class="logo-txt">Discover</div>
+          </div>
+        </div>
+        <div class="form-body">
+          <form>
+            <div class="form-group">
+              <label>User Name</label>
+              <div class="input-group">
+                <div class="input-group-addon icon-mail"></div>
+                <input type="text" class="form-control" placeholder="User Name" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <div class="input-group">
+                <div class="input-group-addon icon-lock"></div>
+                <input type="password" class="form-control" placeholder="Password" />
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary hvr-sweep-to-right">Log In</button>
+            <router-link to="/signup"><button type="submit" class="btn btn-primary hvr-sweep-to-right">Create New Account</button></router-link>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+	name: "Login",
+  props: {
+    msg: String,
+  },
+};
+</script>
+
+<style scoped></style>
