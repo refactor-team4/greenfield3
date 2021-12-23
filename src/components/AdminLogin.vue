@@ -23,7 +23,7 @@
 				<input type="password" class="form-control textbox" name="password" placeholder="Password" required="" v-model="password">
 			</div>
 			<div class="form-group-2">
-				<button class="btn btn-default btn-osx btn-lg"  type="submit">
+			<button class="btn btn-default btn-osx btn-lg"  type="submit">
 				<p>Submit</p>
 				</button>
 			</div>
@@ -41,13 +41,15 @@
 	</template>
 <script>
 import axios from 'axios';
+
 export default {
     name:"Admin",
 data(){
     return {
         username:'',
         password:'',
-		error:""
+		error:"",
+        path:""
         }    
 },
     methods:{
@@ -60,7 +62,7 @@ data(){
         } else if (data === 'password is wrong') {
           this.error=data
         } else {
-          console.log(data)
+            this.$router.push("/ProductsAdmin")
 		}})}}}
 
 </script>

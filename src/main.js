@@ -8,17 +8,22 @@ import Products from './components/Products.vue'
 import Blogs from './components/Blogs.vue'
 import Singleblog from './components/Singleblog.vue'
 import Signup from './components/Signup.vue'
-import AdminLogin from './components/AdminLogin'
+import AdminLogin from './components/AdminLogin.vue'
+import ProductsAdmin from './components/ProductsAdmin.vue'
+
 
 const routes = [
   { path: "/", name: "HomePage", component: HomePage },
   { path: "/login", name: "Login", component: Login },
   { path: "/events", name: "Events", component: Events},
-  { path: "/products", name: "Products", component: Products},
+  { path: "/Products", name: "Products", component: Products},
   { path: "/blogs", name: "Blogs", component: Blogs},
   { path: "/singleblog", name: "Singleblog", component: Singleblog},
   { path: "/signup", name: "Signup", component: Signup},
-  { path: "/admin", name: "Admin", component: AdminLogin}
+  { path: "/admin", name: "Admin", component: AdminLogin},
+  { path: "/ProductsAdmin", name: "ProductsAdmin", component: ProductsAdmin}
+
+  
 
 ];
 
