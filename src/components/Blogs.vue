@@ -342,8 +342,9 @@
 <script>
 export default {
   name: 'Blogs',
-  props: {
-    msg: String
+  props: ['data'],
+  mounted(){
+	console.log(JSON.parse(this.data))
   }
 };
 
