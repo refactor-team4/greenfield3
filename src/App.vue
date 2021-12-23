@@ -1,12 +1,17 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+<login/>
 </template>
 
+<script>
+import Login from './components/Login.vue'
+export default{
+  name: 'APP',
+  components:{Login,}}
+</script>
+
+
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

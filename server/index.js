@@ -11,6 +11,7 @@ const comments=require("./routers/comments")
 const posts=require("./routers/posts")
 const users=require("./routers/users")
 const products=require("./routers/products")
+const admin=require("./routers/admin")
 
 /******************** Middleware ********************/
 
@@ -24,6 +25,7 @@ app.use("/users", users)
 app.use("/comments", comments)
 app.use("/posts", posts)
 app.use("/products", products)
+app.use("/admin", admin)
 
 /**************** Listening Requests ****************/
 var port=5000

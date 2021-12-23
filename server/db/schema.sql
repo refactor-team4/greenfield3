@@ -7,15 +7,20 @@ USE youcamp;
 --   userName varchar(255),
 --   PRIMARY KEY(userId)
 -- );
+-- $ mysql -u root -p <db/schema.sql
 CREATE TABLE users (
   userId int NOT NULL AUTO_INCREMENT ,
   userName varchar (255),
-  firstName varchar(255),
+  email varchar(255),
   Adress varchar (255),
-  phoneNumber varchar(255),
-  imgUrl varchar(255)  ,
+  image varchar(255)  ,
   password varchar(255),
   PRIMARY KEY (userId)
+);
+CREATE TABLE admins (
+    userName varchar(255) ,
+    password varchar(255) 
+
 );
 
 
