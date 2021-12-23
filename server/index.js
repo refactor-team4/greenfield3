@@ -11,7 +11,8 @@ const comments=require("./routers/comments")
 const posts=require("./routers/posts")
 const users=require("./routers/users")
 const products=require("./routers/products")
-
+const editprofile=require("./routers/editprofile")
+const editpassword=require("./routers/editpassword")
 /******************** Middleware ********************/
 
 app.use(express.json());
@@ -24,7 +25,8 @@ app.use("/users", users)
 app.use("/comments", comments)
 app.use("/posts", posts)
 app.use("/products", products)
-
+app.use("/editprofile", editprofile)
+app.use("/editprofile", editpassword)
 /**************** Listening Requests ****************/
 var port=5000
 app.listen(port, function () {
