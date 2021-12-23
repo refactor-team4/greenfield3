@@ -9,6 +9,7 @@
     "start": " nodemon server/index.js"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "bcrypt": "^5.0.1",
     "cloudinary": "^1.27.1",
     "core-js": "^3.6.5",
@@ -23,7 +24,8 @@
     "passport": "^0.5.2",
     "stripe": "^8.194.0",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0"
+    "vue-router": "^4.0.0-0",
+    "vuejs-progress-bar": "^1.2.7"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
