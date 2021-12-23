@@ -120,6 +120,9 @@ export default {
        openPostForm() {
       this.Post = !this.Post;
     },
+    
+ 
+    
       addPost(){
       let post ={
       title:this.Title,

@@ -29,10 +29,10 @@ CREATE TABLE products (
 
 CREATE TABLE posts (
   postId int NOT NULL AUTO_INCREMENT ,
-  content varchar(255),
+  content varchar(10000),
   imgUrl varchar(255),
-  place varchar (255),
   title varchar (255),
+  place varchar (255),
   createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   ownerId int(8),
   PRIMARY KEY (postId),
