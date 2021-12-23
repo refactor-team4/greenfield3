@@ -1,42 +1,34 @@
 <template>
- <body>
-	
-<div class="pre-loader">
-  <div class="loading-img"></div>
-</div>
-
+<div>
 <header class="nav-menu fixed">
 	<nav class="navbar normal">
 		<div class="container-fluid">
-	<div class="navbar-header">
-<a class="navbar-brand" href="index.html">
+		<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">
 			<img src="assets/img/logo.png" alt="Mold Discover Html Template">
-</a>
-
-		</div>
- 
+		</a>	  
+	</div>
 		<div class="collapsed" >
- <ul class="nav">
- <li class="dropdown">
-<a href="home_slider.html">Home </a>
- </li>
- <li>
-<a href="location_archive.html">Events</a>
- </li>
- <li class="dropdown">
-<a href="#">.....</a>
- </li>
- <li>
-<a href="blog_list2.html">Blog</a>
- </li>
- 
- 
- <li>  <a href="login_page.html"><span class="icon-user"></span>Sign In</a></li>
- 
-  </ul> 
-		</div>
- </div>
- </nav>
+		<ul class="nav"> 
+<li >
+    <router-link to="/"><a>Home</a></router-link>
+</li>
+<li>
+	<router-link to="events"><a>Events</a></router-link>
+</li>
+<li >
+	<router-link to="products"><a>Products</a></router-link>
+</li>
+<li>
+	<router-link to="blogs"><a>Blogs</a></router-link>
+</li>
+<li> 
+		<router-link to="Login"><a><span class="icon-user"></span>Sign In</a></router-link>
+	</li>
+ </ul> 
+</div>
+  </div>
+  </nav>
 </header>
 	<section class="page-img" style="background-image: url('assets/img/coast/6.jpg');">
 		<div class="page-img-txt container-fluid">
@@ -66,8 +58,8 @@
 			<div class="row">
 				<div class="col-sm-4">
 					
-<div class="sidebar">
-	<div class="border-box">
+<!-- <div class="sidebar"> -->
+	<!-- <div class="border-box">
 		<div class="box-title">Tour Search</div>
 		<div class="input-group">
 			<input type="text" class="form-control" placeholder="Search Site">
@@ -75,19 +67,19 @@
 				<button class="btn btn-primary">Search</button>
 			</div>
 		</div>
-	</div>
-
+	</div> -->
+<!-- 
 	<div class="border-box">
 		<div class="box-title">Choose Country</div>
 		<select class="form-control selectpicker">
 			<option value="">Choose</option>
 		</select>
-	</div>
+	</div> -->
 
-	<div class="border-box">
+	<!-- <div class="border-box">
 		<div class="box-title">Difficulty</div>
-		<div>
-			<div class="btn-group" data-toggle="buttons">
+		<div> -->
+			<!-- <div class="btn-group" data-toggle="buttons">
 				<label class="btn btn-default active"  data-toggle="tooltip" data-placement="bottom" title="Easy">
 					<input type="radio" name="options" id="option1" checked>
 					<span class="icon-easy"></span>
@@ -108,20 +100,20 @@
 					<input type="radio" name="options" id="option5">
 					<span class="icon-extreme"></span>
 				</label>
-			</div>
-		</div>
-	</div>
+			</div> -->
+		<!-- </div> -->
+	<!-- </div> -->
 
-	<div class="border-box">
-		<div class="box-title">Price Range</div>
+	<!-- <div class="border-box"> -->
+		<!-- <div class="box-title">Price Range</div>
 		<div class="price-widget">
 			<div id="price-slider"></div>
 			<div id="amount-min" class="pull-left"></div>
 			<div id="amount-max" class="pull-right"></div>
-		</div>
-	</div>
+		</div> -->
+	<!-- </div> -->
 
-	<div class="border-box">
+	<!-- <div class="border-box">
 		<div class="box-title">Category</div>
 		<ul class="checklist">
 			<li><input type="checkbox"> All Style</li>
@@ -130,10 +122,10 @@
 			<li><input type="checkbox"> Relaxation</li>
 			<li><input type="checkbox"> Adventure</li>
 		</ul>
-	</div>
+	</div> -->
 
-	<div class="border-box">
-		<div class="box-title">Duration</div>
+	<!-- <div class="border-box"> -->
+		<!-- <div class="box-title">Duration</div>
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="form-group">
@@ -146,8 +138,8 @@
 						<option value="">5</option>
 					</select>
 				</div>
-			</div>
-			<div class="col-sm-6">
+			</div> -->
+			<!-- <div class="col-sm-6">
 				<div class="form-group">
 					<label>Nights</label>
 					<select class="form-control selectpicker">
@@ -158,13 +150,52 @@
 						<option value="">5</option>
 					</select>
 				</div>
-			</div>
-		</div>
+			</div> -->
+		<!-- </div>
 	</div>
 
-</div>
+</div> -->
 
-
+ <div>
+    <div class="field">
+      <label class="label">Product Name</label>
+      <div class="control">
+        <input
+          class="input"
+          type="text"
+          placeholder="Product Name"
+          v-model="productName"
+        />
+      </div>
+    </div>
+        <div class="field">
+      <label class="label">img</label>
+      <div class="control">
+        <input
+          class="input"
+          type="text"
+          placeholder="Product img"
+          v-model="productImg"
+        />
+      </div>
+    </div>
+ 
+    <div class="field">
+      <label class="label">Price</label>
+      <div class="control">
+        <input
+          class="input"
+          type="text"
+          placeholder="Price"
+          v-model="productPrice"
+        />
+      </div>
+    </div>
+ 
+    <div class="control">
+      <button class="button is-success" @click="saveProduct">SAVE</button>
+    </div>
+  </div>
 
 				</div>
 
@@ -180,20 +211,15 @@
 								</div>
 								<div class="item-desc">
 									<div class="item-info">
-										<span class="icon-hard"></span>
 										<h4 class="title"><a href="#">Routeburn Track</a></h4>
 									</div>
 
 									<div class="sub-title">
 										<span class="location">New Zealand</span>
-										<span class="grade">Hard</span>
 									</div>
 
 									<div class="item-detail">
-										<div class="left">
-											<div class="day"><span class="icon-sun"></span>3 Days</div>
-											<div class="night"><span class="icon-moon"></span>2 Nights</div>
-										</div>
+
 										<div class="right">
 											<div class="price">USD 121</div>
 											<a href="trip_detail.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
@@ -215,16 +241,10 @@
 										<h4 class="title"><a href="#">Fitz Roy Trek</a></h4>
 									</div>
 
-									<div class="sub-title">
-										<span class="location">Patagonia, Argentina</span>
-										<span class="grade">Difficult</span>
-									</div>
+
 
 									<div class="item-detail">
-										<div class="left">
-											<div class="day"><span class="icon-sun"></span>3 Days</div>
-											<div class="night"><span class="icon-moon"></span>2 Nights</div>
-										</div>
+										
 										<div class="right">
 											<div class="price">USD 121</div>
 											<a href="trip_detail.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
@@ -246,16 +266,10 @@
 										<h4 class="title"><a href="#">Annapurna Circuit</a></h4>
 									</div>
 
-									<div class="sub-title">
-										<span class="location">Nepal</span>
-										<span class="grade">Hard</span>
-									</div>
+
 
 									<div class="item-detail">
-										<div class="left">
-											<div class="day"><span class="icon-sun"></span>3 Days</div>
-											<div class="night"><span class="icon-moon"></span>2 Nights</div>
-										</div>
+		
 										<div class="right">
 											<div class="price">USD 121</div>
 											<a href="trip_detail.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
@@ -279,13 +293,12 @@
 
 									<div class="sub-title">
 										<span class="location">Australia</span>
-										<span class="grade">Medium</span>
+										
 									</div>
 
 									<div class="item-detail">
 										<div class="left">
-											<div class="day"><span class="icon-sun"></span>3 Days</div>
-											<div class="night"><span class="icon-moon"></span>2 Nights</div>
+								
 										</div>
 										<div class="right">
 											<div class="price">USD 121</div>
@@ -311,13 +324,11 @@
 
 									<div class="sub-title">
 										<span class="location">France-Switzerland</span>
-										<span class="grade">Difficult</span>
 									</div>
 
 									<div class="item-detail">
 										<div class="left">
-											<div class="day"><span class="icon-sun"></span>3 Days</div>
-											<div class="night"><span class="icon-moon"></span>2 Nights</div>
+							
 										</div>
 										<div class="right">
 											<div class="price">USD 121</div>
@@ -343,13 +354,11 @@
 
 									<div class="sub-title">
 										<span class="location">Chile</span>
-										<span class="grade">Easy</span>
 									</div>
 
 									<div class="item-detail">
 										<div class="left">
-											<div class="day"><span class="icon-sun"></span>3 Days</div>
-											<div class="night"><span class="icon-moon"></span>2 Nights</div>
+											
 										</div>
 										<div class="right">
 											<div class="price">USD 121</div>
@@ -361,24 +370,7 @@
 						</div>	
 
 					</div>	
-					<div class="pagination-wrap">
-	<span class="total">Total 127</span>
-	<nav class="pull-right">
-		<ul class="pagination">
-			<li class="page-item">
-				<a class="page-link" href="#" aria-label="First">First</a>
-			</li>
-			<li class="page-item"><a class="page-link" href="#">1</a></li>
-			<li class="page-item active"><a class="page-link" href="#">2</a></li>
-			<li class="page-item"><span class="page-link">..</span></li>
-			<li class="page-item"><a class="page-link" href="#">99</a></li>
-			<li class="page-item">
-				<a class="page-link" href="#" aria-label="Last">Last</a>
-			</li>
-		</ul>
-	</nav>
-	<div class="clearfix"></div>
-</div>
+ 
 
 				</div>
 			</div>
@@ -418,29 +410,83 @@
 					<li>Mold Discover</li>
 					<li>info@moldthemes.com</li>
 				</ul>
-				<div class="clearfix">
+				<!-- <div class="clearfix">
 					<div class="social-icon-list">
 						<ul>
 							<li><a href="https://twitter.com/moldthemes" class="icon-twitter"></a></li>
 							<li><a href="mailto:info@moldthemes.com" class="icon-mail"></a></li>
 						</ul>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
-	<div class="copy"><span>&copy;</span> Copyright Mold Discover, 2017</div>
+ 
 </footer>
-</body>
+</div>
 </template>
-
 <script>
+import axios from "axios";
 export default {
-  name: "product",
+  name: 'Products',
   props: {
-    msg: String,
+    msg: String
+  },
+    data() {
+    return {
+      productName: "",
+      productPrice: "",
+      productimg : ""
+    };
+  },
+  methods: {
+    // Create New product
+    async saveProduct() {
+      try {
+        await axios.post("http://localhost:5000/products", {
+          product_name: this.productName,
+          product_price: this.productPrice,
+        });
+        this.productName = "";
+        this.productPrice = "";
+        this.productimg = ""
+        this.$router.push("/");
+      } catch (err) {
+        console.log(err);
+      }
+    },
   },
 };
+
+ 
+// export default {
+//   name: "AddProduct",
+//   data() {
+//     return {
+//       productName: "",
+//       productPrice: "",
+//       productimg : ""
+//     };
+//   },
+//   methods: {
+//     // Create New product
+//     async saveProduct() {
+//       try {
+//         await axios.post("http://localhost:5000/products", {
+//           product_name: this.productName,
+//           product_price: this.productPrice,
+//         });
+//         this.productName = "";
+//         this.productPrice = "";
+//         this.productimg = ""
+//         this.$router.push("/");
+//       } catch (err) {
+//         console.log(err);
+//       }
+//     },
+//   },
+// };
+
 </script>
 
 <style scoped>
