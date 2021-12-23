@@ -2,9 +2,9 @@
 (function() {
 	"use strict";
 	
-	$(document).ready(function(){
-		retinajs();
-		stickyNavbarShrink('fixed');
+ $(document).ready(function(){
+	    retinajs();
+	    stickyNavbarShrink('fixed');
 		reponsiveNav('nav-menu');
 		heightAdjust();
 
