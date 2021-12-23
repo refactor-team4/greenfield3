@@ -3,6 +3,7 @@ var express = require("express");
 var app = express();
 var cors = require("cors");
 app.use(cors({ credentials: true, sameSite: true }));
+// eslint-disable-next-line no-unused-vars
 const mysql = require('mysql2');
 
 
