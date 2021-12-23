@@ -1,5 +1,5 @@
 <template>
-<body>
+<div>
 
 <header class="nav-menu fixed">
  <nav class="navbar normal transparent">
@@ -12,21 +12,21 @@
   </div>
 
   <div class=" collapsed" >
-     <ul class="nav">
-<li class="dropdown">
-    <a href="home_slider.html">Home</a>
+     <ul class="nav"> 
+<li >
+    <router-link to="/"><a>Home</a></router-link>
 </li>
 <li>
-<a href="location_archive.html">Events</a>
+	<router-link to="events"><a>Events</a></router-link>
 </li>
-<li class="dropdown">
-<a href="#" >.....</a>
+<li >
+	<router-link to="products"><a>Products</a></router-link>
 </li>
 <li>
-<a href="blog_list2.html" >Blog</a>
+	<router-link to="blogs"><a>Blogs</a></router-link>
 </li>
 <li> 
-		<a href="login_page.html">Sign In</a>
+		<router-link to="Login"><a><span class="icon-user"></span>Sign In</a></router-link>
 	</li>
  </ul> 
   </div>
@@ -34,8 +34,8 @@
 </nav>
 </header>
 	
-	<div class="carousel slide carousel-fade full-height stick-top" id="carousel">
-		<div class="carousel-inner" role="listbox">
+	<div class="carousel slide carousel-fade full-height stick-top">
+		<div class="carousel-inner">
 			<div class="item with-overlay active" style="background-image: url('assets/img/trip_detail/4.jpg');">
 				<div class="carousel-caption center-txt">
 					<h1 class="main-header">Enjoy Adventure</h1>	
@@ -44,39 +44,8 @@
 					<a href="#" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore Trips</a>
 				</div>
 			</div>
-			<div class="item with-text-box with-overlay" style="background-image: url('assets/img/trip_detail/5.jpg');">
-				<div class="carousel-caption center-txt">
-					<h1 class="main-header">Outdoor Experience</h1>	
-					<hr>
-					<p class="sub-header">Wander Exotic places and without getting lost.</p>
-					<a href="#" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore Trips</a>
-				</div>
-			</div>
-			<div class="item with-overlay" style="background-image: url('assets/img/trip_detail/6.jpg');">
-				<div class="carousel-caption center-txt">
-					<h1 class="main-header">Lost Joy</h1>	
-					<hr>
-					<p class="sub-header">Wander Exotic places and without getting lost.</p>
-					<a href="#" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore Trips</a>
-				</div>
-			</div>
 
 		</div>
-
-		<a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
-			<span class="icon-arr-left" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-		</a>
-		<a class="right carousel-control" href="#carousel" role="button" data-slide="next">
-			<span class="icon-arr-right" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-		</a>
-
-		<ol class="carousel-indicators">
-			<li data-target="#carousel" data-slide-to="0" class="active"></li>
-			<li data-target="#carousel" data-slide-to="1"></li>
-			<li data-target="#carousel" data-slide-to="2"></li>
-		</ol>
 	</div>	
 
 	
@@ -90,10 +59,10 @@
   <div class="col-sm-6 col-md-2">
     <div class="member" id='bob'>
       <div class="image">
-        <img src="assets/img/team/1.jpg" alt="">
+        <img src="https://ca.slack-edge.com/T02E5DNSTR6-U02E5F7DNHW-5e9f26b8fe08-512" alt="">
       </div>
-      <h4 class="name">Kim L. Burney</h4>
-      <h5 class="detail">Guide/Writer</h5>
+      <h4 class="name">Ala Jridi</h4>
+      <h5 class="detail">Junior Developer</h5>
       <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean </p>
       <div class="social">
         <a href="https://www.facebook.com/profile.php?id=100005139885531" class="icon icon-facebook"></a>
@@ -106,10 +75,10 @@
 	<div class="col-sm-6 col-md-2">
 	<div class="member" id='bob'>
 	<div class="image">
-	<img src="assets/img/team/1.jpg" alt="">
+	<img src="https://ca.slack-edge.com/T02E5DNSTR6-U02E5F7BZL0-537f4e38e96b-512" alt="">
 	</div>
-		<h4 class="name">Kim L. Burney</h4>
-		<h5 class="detail">Guide/Writer</h5>
+		<h4 class="name">Wael Ajabi</h4>
+		<h5 class="detail">Junior Developer</h5>
 		<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean </p>
 		<div class="social">
 		<a href="https://www.facebook.com/profile.php?id=100005139885531" class="icon icon-facebook"></a>
@@ -122,10 +91,10 @@
 	<div class="col-sm-6 col-md-2">
 		<div class="member" id='bob'>
 		<div class="image">
-		<img src="assets/img/team/1.jpg" alt="">
+		<img src="https://ca.slack-edge.com/T02E5DNSTR6-U02E5F792U8-da3cca97550c-512" alt="">
 		</div>
-		<h4 class="name">Kim L. Burney</h4>
-		<h5 class="detail">Guide/Writer</h5>
+		<h4 class="name">Ahmed Bouafif</h4>
+		<h5 class="detail">Junior Developer</h5>
 		<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean </p>
 		<div class="social">
 			<a href="https://www.facebook.com/profile.php?id=100005139885531" class="icon icon-facebook"></a>
@@ -138,10 +107,10 @@
   <div class="col-sm-6 col-md-2">
     <div class="member"  id='bob'>
       <div class="image">
-        <img src="assets/img/team/2.jpg" alt="">
+        <img src="https://ca.slack-edge.com/T02E5DNSTR6-U02E5F7A96U-3007546eb85d-512" alt="">
       </div>
-      <h4 class="name">Shing Ch'in</h4>
-      <h5 class="detail">Tour Guide</h5>
+      <h4 class="name">Sahar Boukari</h4>
+      <h5 class="detail">Junior Developer</h5>
       <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean </p>
       <div class="social">
         <a href="#" class="icon icon-facebook"></a>
@@ -154,10 +123,10 @@
   <div class="col-sm-6 col-md-2">
     <div class="member" id='bob'>
       <div class="image">
-        <img src="assets/img/team/3.jpg" alt="">
+        <img src="https://ca.slack-edge.com/T02E5DNSTR6-U02E5F75SBA-07578c1aaff8-512" alt="">
       </div>
-      <h4 class="name">Pitez Maltr</h4>
-      <h5 class="detail">City Guide</h5>
+      <h4 class="name">Saddem Aidy</h4>
+      <h5 class="detail">Junior Developer</h5>
       <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean </p>
       <div class="social">
         <a href="#" class="icon icon-facebook"></a>
@@ -223,7 +192,7 @@
 
 
 
-</body>
+</div>
 
 
 
@@ -231,7 +200,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'HomePage',
   props: {
     msg: String
   }
@@ -239,7 +208,6 @@ export default {
 
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
 </style>
