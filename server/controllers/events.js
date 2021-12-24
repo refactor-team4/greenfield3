@@ -28,7 +28,7 @@ module.exports={PostOne: (req,res)=>{
     },
     delete:(req,res)=>{
         console.log(req.params);
-        db.query("DELETE FROM events WHERE EventsName=?",[req.params.name],
+        db.query("DELETE FROM events WHERE eventName=?",[req.params.name],
         (err,result)=>{
             if(err){
                 console.log(err);

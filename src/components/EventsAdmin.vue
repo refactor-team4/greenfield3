@@ -186,15 +186,11 @@
               <div class="post-summary">
                 <header>
                   <h4 class="post-title">
-                    <a href="#">{{ item.EventsName }}</a>
+                    <p>Event:</p>
+                    <a href="#">{{item.eventName}}</a>
                   </h4>
                   <p class="byline author vcard">
-                    <span class="italic">By</span>
                     &nbsp;
-                    <span class="dot">·</span>
-                    <span class="updated">
-                      {{ moment(item.createdAt) }}
-                    </span>
                     <span class="dot">·</span>
                     <span class="comments">
                       <i class="fas fa-map-marker-alt"></i>
@@ -202,9 +198,14 @@
                   </p>
                 </header>
                 <div class="post-excerpt">
+                    <span>price</span>
                   {{ item.price }}
+                  <br><br>
+                  <span class="updated">
+                      {{ moment(item.createdAt) }}
+                    </span>
                 </div>
-                <span  @click="remove(item.productName)" id="delete" class="btn btn-primary hvr-sweep-to-right" >Delete</span>
+                <span  @click="remove(item.eventName)" id="delete" class="btn btn-primary hvr-sweep-to-right" >Delete</span>
               </div>
             </article>
 			</div>
@@ -242,7 +243,7 @@ export default {
       axios
         .get("http://localhost:5000/events/fetch")
         .then(({ data }) => {
-          this.products = { data }.data;
+          this.events = { data }.data;
           console.log("products :", this.events);
         })
         .catch((err) => console.error(err));
@@ -364,7 +365,7 @@ cursor: pointer;}
 }
 #buttons{
 	position: relative;
-	bottom: 90px;
+	bottom: 151px;
 	right: 10%;
 	display: flex;
 	justify-content: space-between;
