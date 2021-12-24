@@ -15,8 +15,8 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" v-model="phoneNumber"></div>
-                    <div class="col-md-12"><label class="labels">Address </label><input type="text" class="form-control" placeholder="enter address" v-model="adress"></div>
-                    <div class="col-md-12"><label class="labels">State</label><input type="text" class="form-control" placeholder="enter state" v-model="mystate"></div>
+                    <div class="col-md-12"><label class="labels">Address </label><input type="text" class="form-control" placeholder="enter address" v-model="Adress"></div>
+                    <div class="col-md-12"><label class="labels">State</label><input type="text" class="form-control" placeholder="enter state" v-model="myState"></div>
                     <div class="col-md-12"><label class="labels">Area</label><input type="text" class="form-control" placeholder="enter Area " v-model="area"></div>
                     <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="enter email id" v-model="email"></div>
     
@@ -25,7 +25,7 @@
                     <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" v-model="country"></div>
                     <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
                 </div> -->
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button"  v-on:click="test" >Save Profile</button></div>
             </div>
         </div>
         <!-- <div class="col-md-4">
@@ -46,7 +46,7 @@ export default {
 //  props:{
 //     userName:string,
 //     firstName:string,
-//     adress :string,
+//     Adress :string,
 //     myState :string,
 //     area :string,
 //     phoneNumber:string,
@@ -57,7 +57,7 @@ data(){
     return {
     userName:"",
     firstName:"",
-    adress :"",
+    Adress :"",
     myState :"",
     area :"",
     phoneNumber:"",
@@ -75,19 +75,19 @@ data(){
       editdata(){
        const id=1
        const data={ 
-    userName:"",
-    firstName:"",
-    adress :"",
-    myState :"",
-    area :"",
-    phoneNumber:"",
-    email:"" 
+    userName:this.userName,
+    firstName:this.firstName,
+    Adress : this.Adress,
+    myState :this.myState,
+    area :this.area ,
+    phoneNumber:this.phoneNumber,
+    email:this.email
    } 
-   axios
-  .put(`/users/editprofile/${id}`,data)
-  .then(response => {
+   axios.put(`/users/editprofile/${id}`,data)
+   .then(response => {
     console.log(response);
-  });
+   })
+   .catch((err)=> console.log(err))
       }
   }
 }

@@ -1,13 +1,13 @@
 const express =require("express")
 const router = express.Router()
-const profileController= require("../controllers/users")
+const myprofileController= require("../controllers/users")
 
-router.route("/profile")
-  .get(ProfileController.find_All)
+router.route("/myprofile")
+  .get(myprofileController.find_All)
   
-router.route("/profile/:userId")
-  .get(profileController.find_One) 
-  .put(profileController.update_One) 
-  .delete(profileController.remove_One)
+router.route("/myprofile/:userId")
+  .get(myprofileController.find_One) 
+  .put(myprofileController.update_One) 
+  .delete(myprofileController.remove_One)
 
 module.exports = router;

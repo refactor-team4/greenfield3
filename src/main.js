@@ -9,7 +9,7 @@ import Blogs from './components/Blogs.vue'
 import Singleblog from './components/Singleblog.vue'
 import Signup from './components/Signup.vue'
 import ProductsAdmin from './components/ProductsAdmin.vue'
-import profile from './components/myprofile.vue'
+import myprofile from './components/myprofile.vue'
 import editprofile from './components/editprofile.vue'
 
 const routes = [
@@ -21,7 +21,7 @@ const routes = [
   { path: "/singleblog", name: "Singleblog", component: Singleblog},
   { path: "/signup", name: "Signup", component: Signup},
   { path: "/ProductsAdmin", name: "ProductsAdmin", component: ProductsAdmin},
-  { path: "/myprofile", name: "profile", component: profile},
+  { path: "/myprofile", name: "myprofile", component: myprofile},
   { path: "/editprofile", name: "editprofile", component: editprofile}
   
 

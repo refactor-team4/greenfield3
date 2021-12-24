@@ -29,7 +29,7 @@ app.use("/comments", comments)
 app.use("/posts", posts)
 app.use("/products", products)
 app.use("/editprofile", editprofile)
-app.use("/editprofile", editpassword)
+app.use("/editpassword", editpassword)
 app.use("/blogs", blogs)
 /**************** Listening Requests ****************/
 var port=5000
