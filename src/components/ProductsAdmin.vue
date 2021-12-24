@@ -1,65 +1,88 @@
 <template>
-<div>
-<header class="nav-menu fixed">
-	<nav class="navbar normal">
-		<div class="container-fluid">
-		<div class="navbar-header">
-		<a class="navbar-brand" href="index.html">
-			<img src="assets/img/logo.png" alt="Mold Discover Html Template">
-		</a>	  
-	</div>
-		<div class="collapsed" >
-		<ul class="nav"> 
-<li >
-    <router-link to="/"><a>Home</a></router-link>
-</li>
-<li>
-	<router-link to="events"><a>Events</a></router-link>
-</li>
-<li >
-	<router-link to="products"><a>Products</a></router-link>
-</li>
-<li>
-	<router-link to="blogs"><a>Blogs</a></router-link>
-</li>
-<li> 
-		<router-link to="Login"><a><span class="icon-user"></span>Sign In</a></router-link>
-	</li>
- </ul> 
-</div>
-  </div>
-  </nav>
-</header>
-	<section class="page-img" style="background-image: url('assets/img/coast/6.jpg');">
-		<div class="page-img-txt container-fluid">
-			<div class="row">
-				<div class="col-sm-4">
-					<br>
-					<div class="map-image">
-						<img class="img-responsive" src="assets/img/map/africa.png" alt="">
-					</div>
-					<br>
-					<br>
-				</div>
-				<div class="col-sm-7">
-					<h1>Africa</h1>
-					<div class="term-description">
-						<p>Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu.</p>
+  <div>
+    <header class="nav-menu fixed">
+      <nav class="navbar normal">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">
+              <img
+                src="assets/img/logo.png"
+                alt="Mold Discover Html Template"
+              />
+            </a>
+          </div>
+          <div class="collapsed">
+            <ul class="nav">
+              <li>
+                <router-link to="/"><a>Home</a></router-link>
+              </li>
+              <li>
+                <router-link to="events"><a>Events</a></router-link>
+              </li>
+              <li>
+                <router-link to="products"><a>Products</a></router-link>
+              </li>
+              <li>
+                <router-link to="blogs"><a>Blogs</a></router-link>
+              </li>
+              <li>
+                <router-link to="Login"
+                  ><a><span class="icon-user"></span>Sign In</a></router-link
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section
+      class="page-img"
+      style="background-image: url('assets/img/coast/6.jpg')"
+    >
+      <div class="page-img-txt container-fluid">
+        <div class="row">
+          <div class="col-sm-4">
+            <br />
+            <div class="map-image">
+              <img
+                class="img-responsive"
+                src="assets/img/map/africa.png"
+                alt=""
+              />
+            </div>
+            <br />
+            <br />
+          </div>
+          <div class="col-sm-7">
+            <h1>Africa</h1>
+            <div class="term-description">
+              <p>
+                Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id,
+                metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis
+                hendrerit fringilla. Vestibulum ante ipsum primis in faucibus
+                orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi
+                consectetuer lacinia. Nam pretium turpis et arcu.
+              </p>
 
-						<p>Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui.</p>
-					</div>					
-				</div>
-			</div>
-		</div>
-	</section>
+              <p>
+                Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet
+                iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu,
+                accumsan a, consectetuer eget, posuere ut, mauris. Praesent
+                adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc
+                nonummy metus. Vestibulum volutpat pretium libero. Cras id dui.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	<main>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					
-<!-- <div class="sidebar"> -->
-	<!-- <div class="border-box">
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <!-- <div class="sidebar"> -->
+            <!-- <div class="border-box">
 		<div class="box-title">Tour Search</div>
 		<div class="input-group">
 			<input type="text" class="form-control" placeholder="Search Site">
@@ -68,7 +91,7 @@
 			</div>
 		</div>
 	</div> -->
-<!-- 
+            <!-- 
 	<div class="border-box">
 		<div class="box-title">Choose Country</div>
 		<select class="form-control selectpicker">
@@ -76,10 +99,10 @@
 		</select>
 	</div> -->
 
-	<!-- <div class="border-box">
+            <!-- <div class="border-box">
 		<div class="box-title">Difficulty</div>
 		<div> -->
-			<!-- <div class="btn-group" data-toggle="buttons">
+            <!-- <div class="btn-group" data-toggle="buttons">
 				<label class="btn btn-default active"  data-toggle="tooltip" data-placement="bottom" title="Easy">
 					<input type="radio" name="options" id="option1" checked>
 					<span class="icon-easy"></span>
@@ -101,19 +124,19 @@
 					<span class="icon-extreme"></span>
 				</label>
 			</div> -->
-		<!-- </div> -->
-	<!-- </div> -->
+            <!-- </div> -->
+            <!-- </div> -->
 
-	<!-- <div class="border-box"> -->
-		<!-- <div class="box-title">Price Range</div>
+            <!-- <div class="border-box"> -->
+            <!-- <div class="box-title">Price Range</div>
 		<div class="price-widget">
 			<div id="price-slider"></div>
 			<div id="amount-min" class="pull-left"></div>
 			<div id="amount-max" class="pull-right"></div>
 		</div> -->
-	<!-- </div> -->
+            <!-- </div> -->
 
-	<!-- <div class="border-box">
+            <!-- <div class="border-box">
 		<div class="box-title">Category</div>
 		<ul class="checklist">
 			<li><input type="checkbox"> All Style</li>
@@ -124,8 +147,8 @@
 		</ul>
 	</div> -->
 
-	<!-- <div class="border-box"> -->
-		<!-- <div class="box-title">Duration</div>
+            <!-- <div class="border-box"> -->
+            <!-- <div class="box-title">Duration</div>
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="form-group">
@@ -139,7 +162,7 @@
 					</select>
 				</div>
 			</div> -->
-			<!-- <div class="col-sm-6">
+            <!-- <div class="col-sm-6">
 				<div class="form-group">
 					<label>Nights</label>
 					<select class="form-control selectpicker">
@@ -151,292 +174,341 @@
 					</select>
 				</div>
 			</div> -->
-		<!-- </div>
+            <!-- </div>
 	</div>
 
 </div> -->
 
- <div>
-    <div class="field">
-      <label class="label">Product Name</label>
-      <div class="control">
-        <input
-          class="input"
-          type="text"
-          placeholder="Product Name"
-          v-model="productName"
-        />
+            <div>
+              <div class="field">
+                <label class="label">Product Name</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Product Name"
+                    v-model="productName"
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">img</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Product img"
+                    v-model="productImg" 
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Price</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Price"
+                    v-model="productPrice"
+                  />
+                </div>
+              </div>
+
+              <div class="control">
+                <button class="button is-success" @click="saveProduct">
+                  SAVE
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-8">
+            <div class="row item">
+              <div class="col-sm-12 col-md-6">
+                <div class="item-grid">
+                  <div
+                    class="item-img"
+                    style="
+                      background-image: url('assets/img/trip_detail/thumb_1.jpg');
+                    "
+                  >
+                    <div class="item-overlay">
+                      <a href="trip_detail.html"
+                        ><span class="icon-binocular"></span
+                      ></a>
+                    </div>
+                  </div>
+                  <div class="item-desc">
+                    <div class="item-info">
+                      <h4 class="title"><a href="#">Routeburn Track</a></h4>
+                    </div>
+
+                    <div class="sub-title">
+                      <span class="location">New Zealand</span>
+                    </div>
+
+                    <div class="item-detail">
+                      <div class="right">
+                        <div class="price">USD 121</div>
+                        <a
+                          href="trip_detail.html"
+                          class="btn btn-primary hvr-sweep-to-right"
+                          >Book Now</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="item-grid">
+                  <div
+                    class="item-img"
+                    style="
+                      background-image: url('assets/img/trip_detail/thumb_2.jpg');
+                    "
+                  >
+                    <div class="item-overlay">
+                      <a href="trip_detail.html"
+                        ><span class="icon-binocular"></span
+                      ></a>
+                    </div>
+                  </div>
+                  <div class="item-desc">
+                    <div class="item-info">
+                      <span class="icon-difficult"></span>
+                      <h4 class="title"><a href="#">Fitz Roy Trek</a></h4>
+                    </div>
+
+                    <div class="item-detail">
+                      <div class="right">
+                        <div class="price">USD 121</div>
+                        <a
+                          href="trip_detail.html"
+                          class="btn btn-primary hvr-sweep-to-right"
+                          >Book Now</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="item-grid">
+                  <div
+                    class="item-img"
+                    style="
+                      background-image: url('assets/img/trip_detail/thumb_3.jpg');
+                    "
+                  >
+                    <div class="item-overlay">
+                      <a href="trip_detail.html"
+                        ><span class="icon-binocular"></span
+                      ></a>
+                    </div>
+                  </div>
+                  <div class="item-desc">
+                    <div class="item-info">
+                      <span class="icon-hard"></span>
+                      <h4 class="title"><a href="#">Annapurna Circuit</a></h4>
+                    </div>
+
+                    <div class="item-detail">
+                      <div class="right">
+                        <div class="price">USD 121</div>
+                        <a
+                          href="trip_detail.html"
+                          class="btn btn-primary hvr-sweep-to-right"
+                          >Book Now</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="item-grid">
+                  <div
+                    class="item-img"
+                    style="
+                      background-image: url('assets/img/trip_detail/thumb_4.jpg');
+                    "
+                  >
+                    <div class="item-overlay">
+                      <a href="trip_detail.html"
+                        ><span class="icon-binocular"></span
+                      ></a>
+                    </div>
+                  </div>
+                  <div class="item-desc">
+                    <div class="item-info">
+                      <span class="icon-medium"></span>
+                      <h4 class="title"><a href="#">Overland Track</a></h4>
+                    </div>
+
+                    <div class="sub-title">
+                      <span class="location">Australia</span>
+                    </div>
+
+                    <div class="item-detail">
+                      <div class="left"></div>
+                      <div class="right">
+                        <div class="price">USD 121</div>
+                        <a
+                          href="trip_detail.html"
+                          class="btn btn-primary hvr-sweep-to-right"
+                          >Book Now</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="item-grid">
+                  <div
+                    class="item-img"
+                    style="
+                      background-image: url('assets/img/trip_detail/thumb_5.jpg');
+                    "
+                  >
+                    <div class="item-overlay">
+                      <a href="trip_detail.html"
+                        ><span class="icon-binocular"></span
+                      ></a>
+                    </div>
+                  </div>
+                  <div class="item-desc">
+                    <div class="item-info">
+                      <span class="icon-difficult"></span>
+                      <h4 class="title"><a href="#">The Haute Route</a></h4>
+                    </div>
+
+                    <div class="sub-title">
+                      <span class="location">France-Switzerland</span>
+                    </div>
+
+                    <div class="item-detail">
+                      <div class="left"></div>
+                      <div class="right">
+                        <div class="price">USD 121</div>
+                        <a
+                          href="trip_detail.html"
+                          class="btn btn-primary hvr-sweep-to-right"
+                          >Book Now</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6">
+                <div class="item-grid">
+                  <div
+                    class="item-img"
+                    style="
+                      background-image: url('assets/img/trip_detail/thumb_6.jpg');
+                    "
+                  >
+                    <div class="item-overlay">
+                      <a href="trip_detail.html"
+                        ><span class="icon-binocular"></span
+                      ></a>
+                    </div>
+                  </div>
+                  <div class="item-desc">
+                    <div class="item-info">
+                      <span class="icon-hard"></span>
+                      <h4 class="title">
+                        <a href="#">Torres del Paine Circuit</a>
+                      </h4>
+                    </div>
+
+                    <div class="sub-title">
+                      <span class="location">Chile</span>
+                    </div>
+
+                    <div class="item-detail">
+                      <div class="left"></div>
+                      <div class="right">
+                        <div class="price">USD 121</div>
+                        <a
+                          href="trip_detail.html"
+                          class="btn btn-primary hvr-sweep-to-right"
+                          >Book Now</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-        <div class="field">
-      <label class="label">img</label>
-      <div class="control">
-        <input
-          class="input"
-          type="text"
-          placeholder="Product img"
-          v-model="productImg"
-        />
+    </main>
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-7 col-md-3">
+            <h3>Mold Discover</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Consequuntur, quia, architecto? A, reiciendis eveniet! Esse est
+              eaque adipisci natus rerum laudantium accusamus magni.
+            </p>
+          </div>
+          <div class="col-sm-5 col-md-2">
+            <h3>Quick Link</h3>
+            <ul>
+              <li>Holiday Package</li>
+              <li>Summer Adventure</li>
+              <li>Bus and Trasnportation</li>
+              <li>Ticket and Hotel Booking</li>
+              <li>Trek and Hikings</li>
+            </ul>
+          </div>
+          <div class="col-sm-7 col-md-4">
+            <h3>Newsletter Signup</h3>
+            <p>Subscribe to our weekly newsletter to get news and update</p>
+            <br />
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Your Email"
+              />
+              <div class="input-group-btn">
+                <button class="btn btn-primary">Subscribe</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-5 col-md-2">
+            <h3>Contact Info</h3>
+            <ul>
+              <li>Mold Discover</li>
+              <li>info@moldthemes.com</li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
- 
-    <div class="field">
-      <label class="label">Price</label>
-      <div class="control">
-        <input
-          class="input"
-          type="text"
-          placeholder="Price"
-          v-model="productPrice"
-        />
-      </div>
-    </div>
- 
-    <div class="control">
-      <button class="button is-success" @click="saveProduct">SAVE</button>
-    </div>
+    </footer>
   </div>
-
-				</div>
-
-				<div class="col-sm-8">
-					<div class="row item">
-
-						<div class="col-sm-12 col-md-6">
-							<div class="item-grid">
-								<div class="item-img" style="background-image: url('assets/img/trip_detail/thumb_1.jpg');">	
-									<div class="item-overlay">
-										<a href="trip_detail.html"><span class="icon-binocular"></span></a>
-									</div>
-								</div>
-								<div class="item-desc">
-									<div class="item-info">
-										<h4 class="title"><a href="#">Routeburn Track</a></h4>
-									</div>
-
-									<div class="sub-title">
-										<span class="location">New Zealand</span>
-									</div>
-
-									<div class="item-detail">
-
-										<div class="right">
-											<div class="price">USD 121</div>
-											<a href="trip_detail.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>	
-						<div class="col-sm-12 col-md-6">
-							<div class="item-grid">
-								<div class="item-img" style="background-image: url('assets/img/trip_detail/thumb_2.jpg');">	
-									<div class="item-overlay">
-										<a href="trip_detail.html"><span class="icon-binocular"></span></a>
-									</div>
-								</div>
-								<div class="item-desc">
-									<div class="item-info">
-										<span class="icon-difficult"></span>
-										<h4 class="title"><a href="#">Fitz Roy Trek</a></h4>
-									</div>
-
-
-
-									<div class="item-detail">
-										
-										<div class="right">
-											<div class="price">USD 121</div>
-											<a href="trip_detail.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>	
-						<div class="col-sm-12 col-md-6">
-							<div class="item-grid">
-								<div class="item-img" style="background-image: url('assets/img/trip_detail/thumb_3.jpg');">	
-									<div class="item-overlay">
-										<a href="trip_detail.html"><span class="icon-binocular"></span></a>
-									</div>
-								</div>
-								<div class="item-desc">
-									<div class="item-info">
-										<span class="icon-hard"></span>
-										<h4 class="title"><a href="#">Annapurna Circuit</a></h4>
-									</div>
-
-
-
-									<div class="item-detail">
-		
-										<div class="right">
-											<div class="price">USD 121</div>
-											<a href="trip_detail.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>	
-						<div class="col-sm-12 col-md-6">
-							<div class="item-grid">
-								<div class="item-img" style="background-image: url('assets/img/trip_detail/thumb_4.jpg');">	
-									<div class="item-overlay">
-										<a href="trip_detail.html"><span class="icon-binocular"></span></a>
-									</div>
-								</div>
-								<div class="item-desc">
-									<div class="item-info">
-										<span class="icon-medium"></span>
-										<h4 class="title"><a href="#">Overland Track</a></h4>
-									</div>
-
-									<div class="sub-title">
-										<span class="location">Australia</span>
-										
-									</div>
-
-									<div class="item-detail">
-										<div class="left">
-								
-										</div>
-										<div class="right">
-											<div class="price">USD 121</div>
-											<a href="trip_detail.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>	
-
-						<div class="col-sm-12 col-md-6">
-							<div class="item-grid">
-								<div class="item-img" style="background-image: url('assets/img/trip_detail/thumb_5.jpg');">	
-									<div class="item-overlay">
-										<a href="trip_detail.html"><span class="icon-binocular"></span></a>
-									</div>
-								</div>
-								<div class="item-desc">
-									<div class="item-info">
-										<span class="icon-difficult"></span>
-										<h4 class="title"><a href="#">The Haute Route</a></h4>
-									</div>
-
-									<div class="sub-title">
-										<span class="location">France-Switzerland</span>
-									</div>
-
-									<div class="item-detail">
-										<div class="left">
-							
-										</div>
-										<div class="right">
-											<div class="price">USD 121</div>
-											<a href="trip_detail.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>	
-
-						<div class="col-sm-12 col-md-6">
-							<div class="item-grid">
-								<div class="item-img" style="background-image: url('assets/img/trip_detail/thumb_6.jpg');">	
-									<div class="item-overlay">
-										<a href="trip_detail.html"><span class="icon-binocular"></span></a>
-									</div>
-								</div>
-								<div class="item-desc">
-									<div class="item-info">
-										<span class="icon-hard"></span>
-										<h4 class="title"><a href="#">Torres del Paine Circuit</a></h4>
-									</div>
-
-									<div class="sub-title">
-										<span class="location">Chile</span>
-									</div>
-
-									<div class="item-detail">
-										<div class="left">
-											
-										</div>
-										<div class="right">
-											<div class="price">USD 121</div>
-											<a href="trip_detail.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>	
-
-					</div>	
- 
-
-				</div>
-			</div>
-		</div>
-	</main>
-	<footer id="footer">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-7 col-md-3">
-				<h3>Mold Discover</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, quia, architecto? A, reiciendis eveniet! Esse est eaque adipisci natus rerum laudantium accusamus magni.</p>
-			</div>
-			<div class="col-sm-5 col-md-2">
-				<h3>Quick Link</h3>
-				<ul>
-					<li>Holiday Package</li>
-					<li>Summer Adventure</li>
-					<li>Bus and Trasnportation</li>
-					<li>Ticket and Hotel Booking</li>
-					<li>Trek and Hikings</li>
-				</ul>
-			</div>
-			<div class="col-sm-7 col-md-4">
-				<h3>Newsletter Signup</h3>
-				<p>Subscribe to our weekly newsletter to get news and update</p>
-				<br>
-				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Your Email">
-					<div class="input-group-btn">
-						<button class="btn btn-primary">Subscribe</button>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-5 col-md-2">
-				<h3>Contact Info</h3>
-				<ul>
-					<li>Mold Discover</li>
-					<li>info@moldthemes.com</li>
-				</ul>
-				<!-- <div class="clearfix">
-					<div class="social-icon-list">
-						<ul>
-							<li><a href="https://twitter.com/moldthemes" class="icon-twitter"></a></li>
-							<li><a href="mailto:info@moldthemes.com" class="icon-mail"></a></li>
-						</ul>
-					</div>
-				</div> -->
-			</div>
-		</div>
-	</div>
- 
-</footer>
-</div>
 </template>
 <script>
 import axios from "axios";
 export default {
-  name: 'Products',
+  name: "Products",
   props: {
-    msg: String
+    msg: String,
   },
-    data() {
+  data() {
     return {
       productName: "",
       productPrice: "",
-      productimg : ""
+      productimg: "",
     };
   },
   methods: {
@@ -446,10 +518,12 @@ export default {
         await axios.post("http://localhost:5000/products", {
           product_name: this.productName,
           product_price: this.productPrice,
+          product_img : this.productimg
         });
         this.productName = "";
+        console.log(this.productName);
         this.productPrice = "";
-        this.productimg = ""
+        this.productimg = "";
         this.$router.push("/");
       } catch (err) {
         console.log(err);
@@ -457,38 +531,6 @@ export default {
     },
   },
 };
-
- 
-// export default {
-//   name: "AddProduct",
-//   data() {
-//     return {
-//       productName: "",
-//       productPrice: "",
-//       productimg : ""
-//     };
-//   },
-//   methods: {
-//     // Create New product
-//     async saveProduct() {
-//       try {
-//         await axios.post("http://localhost:5000/products", {
-//           product_name: this.productName,
-//           product_price: this.productPrice,
-//         });
-//         this.productName = "";
-//         this.productPrice = "";
-//         this.productimg = ""
-//         this.$router.push("/");
-//       } catch (err) {
-//         console.log(err);
-//       }
-//     },
-//   },
-// };
-
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

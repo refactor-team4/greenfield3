@@ -20,9 +20,6 @@ const routes = [
   { path: "/singleblog", name: "Singleblog", component: Singleblog},
   { path: "/signup", name: "Signup", component: Signup},
   { path: "/ProductsAdmin", name: "ProductsAdmin", component: ProductsAdmin}
-
-  
-
 ];
 
 const router = createRouter({

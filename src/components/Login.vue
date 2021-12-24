@@ -26,8 +26,7 @@
                 <div class="input-group-addon icon-lock"></div>
                 <input type="password" class="form-control" placeholder="Password" />
               </div>
-            </div>
-
+            </div>  
             <button type="submit" class="btn btn-primary hvr-sweep-to-right">Log In</button>
             <router-link to="/signup"><button type="submit" class="btn btn-primary hvr-sweep-to-right">Create New Account</button></router-link>
           </form>
@@ -37,11 +36,14 @@
   </div>
 </template>
 <script>
+
+
 export default {
   name: "Login",
   props: {
     msg: String,
   },
+ 
 };
 </script>
 

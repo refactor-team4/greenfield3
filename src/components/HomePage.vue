@@ -189,13 +189,7 @@
 	</div>
 	<div class="copy"><span>&copy;</span> Copyright Mold Discover, 2017</div>
 </footer>
-
-
-
 </div>
-
-
-
 </template>
 
 <script>
