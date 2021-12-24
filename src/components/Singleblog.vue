@@ -71,7 +71,7 @@
                                 <span class="italic">in </span>
                                 <a>{{ this.blog.place }}</a>
                                 <span class="dot">·</span>
-                                <a href="#">4 Comments</a>
+                                <a href="#">{{this.comments.length}} Comments</a>
                             </p>
                         </div>
                         <div class="col-sm-2"></div>
@@ -228,7 +228,8 @@ export default {
             blog: {},
             comments:{},
             userData:{},
-            content :""
+            content :"",
+            postId:"",
         };
     },
     methods: {
@@ -243,8 +244,8 @@ export default {
                 .then((response) => {
                     this.blog = response.data;
                     this.ownerId= response.data.ownerId
-                    this.fetchComments()
                 })
+                .then(()=> this.fetchComments())
                 .catch((err) => console.error(err));
         },
          fetchUserData() {
@@ -258,10 +259,10 @@ export default {
                 .catch((err) => console.error(err));
         },
             fetchComments() {
-                var postId=this.blog.postId
-                console.log('xxxx :', this.blog.postId)
+                var postId=this.blog
+                console.log('postId :', postId)
             axios
-                .get('http://localhost:5000/comments/getComments', postId)
+                .post('http://localhost:5000/comments/getComments', postId)
                 .then((response) => {
                     this.comments = response.data;
                     console.log('last : ', response.data)
