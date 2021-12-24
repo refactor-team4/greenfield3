@@ -1,5 +1,5 @@
 <template>
- <div class="container rounded bg-white mt-5 mb-5">
+ <div class="container rounded bg-white mt-5 mb-5" id="edit">
     <div class="row">
         <div class="col-md-3 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
@@ -10,7 +10,7 @@
                     <h4 class="text-right">Update Profile</h4>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Username</label><input type="text" class="form-control" placeholder="first name" v-model="userName"></div>
+                    <div class="col-md-6"><label class="labels">Username</label><input type="text" class="form-control" placeholder="first name" v-model=" userName"></div>
                     <div class="col-md-6"><label class="labels">Full Name </label><input type="text" class="form-control" v-model="firstName" placeholder="surname"></div>
                 </div>
                 <div class="row mt-3">
@@ -41,16 +41,17 @@
 
 <script>
 import axios from "axios";
+
 export default {
- props:{
-    userName:string,
-    firstName:string,
-    adress :string,
-    myState :string,
-    area :string,
-    phoneNumber:string,
-    email:string
- },
+//  props:{
+//     userName:string,
+//     firstName:string,
+//     adress :string,
+//     myState :string,
+//     area :string,
+//     phoneNumber:string,
+//     email:string
+//  },
 
 data(){
     return {
@@ -63,20 +64,30 @@ data(){
     email:"" 
    } 
 },
+
   methods:{
        fetchdata(){
-    axios.get("./").then(({data})=>{
-        console.log(data)
-    })
-    .catch((err)=>{
-        console.log(err)
-    })
+    axios.get('/users/profile')
+    .then(response => {console.log(response)
+    });
+   
      },
       editdata(){
-    axios.put(`./path/${id}`,this.state)
-    .then(()=>{
-        console.log(data)
-    })
+       const id=1
+       const data={ 
+    userName:"",
+    firstName:"",
+    adress :"",
+    myState :"",
+    area :"",
+    phoneNumber:"",
+    email:"" 
+   } 
+   axios
+  .put(`/users/editprofile/${id}`,data)
+  .then(response => {
+    console.log(response);
+  });
       }
   }
 }

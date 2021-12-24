@@ -7,8 +7,8 @@
                 <div class="media align-items-end profile-head">
                     <div class="profile mr-3"><img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" alt="..." width="130" class="rounded mb-2 img-thumbnail"><a href="#" class="btn btn-outline-dark btn-sm btn-block">Edit profile</a></div>
                     <div class="media-body mb-5 text-white">
-                        <h4 class="mt-0 mb-0">{{fullName}}</h4>
-                        <p class="small mb-4"> <i class="fas fa-map-marker-alt mr-2"></i>New York</p>
+                        <h4 class="mt-0 mb-0">{{userName}}</h4>
+                        <p class="small mb-4"> <i class="fas fa-map-marker-alt mr-2"></i>{{myState}}</p>
                     </div>
                 </div>
             </div>
@@ -28,9 +28,9 @@
             <div class="px-4 py-3">
                 <h5 class="mb-0">About</h5>
                 <div class="p-4 rounded shadow-sm bg-light">
-                    <p class="font-italic mb-0">Web Developer</p>
-                    <p class="font-italic mb-0">Lives in New York</p>
-                    <p class="font-italic mb-0">Photographer</p>
+                    <p class="font-italic mb-0">{{phoneNumber}}</p>
+                    <p class="font-italic mb-0">{{adress}}</p>
+                    <p class="font-italic mb-0">{{area}}</p>
                 </div>
             </div>
             <div class="py-4 px-4">
@@ -54,15 +54,25 @@ import axios from "axios";
 export default {
     
  methods:{
-     fetchdata(){
-    axios.get("./").then(({data})=>{
-        console.log(data)
-    })
-    .catch((err)=>{
-        console.log(err)
-    })
+        fetchdata(){
+    axios.get('/users/profile')
+    .then(response => {console.log(response)
+    });
+   
+    
      },
- }   
+    //  fetchdata(){
+    // axios.get("/users/profile")
+    // .then(response =>this.test=response.data.total
+    // )
+    // .catch((err)=>{
+    //     console.log(err)
+    // })
+    //  },
+ }  
+ 
+ 
+ 
 }
 </script>
 <style scoped>
