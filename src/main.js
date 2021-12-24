@@ -16,7 +16,7 @@ const routes = [
     { path: "/login", name: "Login", component: Login },
     { path: "/events", name: "Events", component: Events },
     { path: "/Products", name: "Products", component: Products },
-    { path: "/blogs/:id/:userId", name: "Singleblog", component: Singleblog },
+    { path: "/blogDetails/:id/:userId/:ConnectedId", name: "Singleblog", component: Singleblog },
     { path: "/signup", name: "Signup", component: Signup },
     { path: "/ProductsAdmin", name: "ProductsAdmin", component: ProductsAdmin },
     { path: "/blogs", name: "Blogs",props:true,meta:{title : "Blogs"}, component: Blogs},

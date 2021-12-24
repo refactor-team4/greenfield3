@@ -18,22 +18,22 @@
                                 <router-link to="/"><a>Home</a></router-link>
                             </li>
                             <li>
-                                <router-link to="events">
+                                <router-link to="/events">
                                     <a>Events</a>
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="products">
+                                <router-link to="/products">
                                     <a>Products</a>
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="blogs">
+                                <router-link to="/blogs">
                                     <a>Blogs</a>
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="Login">
+                                <router-link to="/login">
                                     <a>
                                         <span class="icon-user"></span>
                                         Sign In
@@ -63,7 +63,7 @@
                             </div>
                             <div class="author">
                                 <span>By</span>
-                                <a >{{this.userData.userName.toUpperCase()}}</a>
+                                <a >{{this.userData.userName}}</a>
                             </div>
                             <p class="byline">
                                 <span>{{ moment(this.blog.createdAt) }}</span>
@@ -96,12 +96,13 @@
                                 </div>
                                 <ul class="media-list review-comment">
                                   
-                                    <li>
+                                    <li    v-for="(item, index) in comments"
+                            :key="index">
                                         <div class="media">
                                             <div class="media-left">
                                                 <a href="#">
                                                     <img
-                                                        src="assets/img/team/2-sm.jpg"
+                                                       v-bind:src="item.posterPicture"
                                                         class="media-object"
                                                         alt=""
                                                     />
@@ -109,31 +110,10 @@
                                             </div>
                                             <div class="media-body">
                                                 <h4 class="media-heading">
-                                                    Shing Ch'in
+                                                    {{item.posterUserName}}
                                                 </h4>
-                                                <div class="rating">
-                                                    <span
-                                                        class="icon-star"
-                                                    ></span>
-                                                    <span
-                                                        class="icon-star"
-                                                    ></span>
-                                                    <span
-                                                        class="icon-star"
-                                                    ></span>
-                                                    <span
-                                                        class="icon-star"
-                                                    ></span>
-                                                    <span
-                                                        class="icon-star-empty"
-                                                    ></span>
-                                                </div>
-                                                Cras sit amet nibh libero, in
-                                                gravida nulla. Nulla vel metus
-                                                scelerisque ante sollicitudin
-                                                commodo. Cras purus odio,
-                                                vestibulum in vulputate at,
-                                                tempus viverra turpis.
+                                             
+                                               {{item.commentaire}}
                                             </div>
                                         </div>
                                     </li>
@@ -141,15 +121,17 @@
                                 <div class="add-comment">
                                     <div class="form-group">
                                         <label>Add Comment</label>
-                                        <textarea class="form-control">
+                                        <textarea class="form-control" v-model="content">
 Your comment</textarea
                                         >
-                                        <button class="btn btn-primary">
+                                        <button class="btn btn-primary" v-on:click="postComment">
                                             Add Comment
                                         </button>
                                     </div>
                                 </div>
                             </div>
+                            
+                            
                         </div>
                     </div>
                 </div>
@@ -244,7 +226,9 @@ export default {
     data() {
         return {
             blog: {},
+            comments:{},
             userData:{},
+            content :""
         };
     },
     methods: {
@@ -253,6 +237,7 @@ export default {
             const id = route.params.id;
             const userId =route.params.userId
             console.log('userId :' , userId)
+          
             axios
                 .get(`http://localhost:5000/blogs/details/${id}`)
                 .then((response) => {
@@ -271,8 +256,35 @@ export default {
                 })
                 .catch((err) => console.error(err));
         },
+            fetchComments() {
+                var postId=this.blog.postId
+            axios
+                .get('http://localhost:5000/comments/getComments', postId)
+                .then((response) => {
+                    this.comments = response.data;
+                    console.log('last : ', response.data)
+                })
+                .catch((err) => console.error(err));
+        },
         postComment(){
             
+            const postId = this.blog.postId;
+            const posterUserName =JSON.parse(localStorage.getItem("session")||'').userName;
+            const posterPicture =JSON.parse(localStorage.getItem("session")||'').profilePicture
+            var commentData={
+                postId: postId,
+                posterUserName : posterUserName,
+                posterPicture : posterPicture,
+                commentaire : this.content
+            }
+             axios
+                .post('http://localhost:5000/comments/postComment', commentData)
+                .then((response) => {
+                    // this.userData = response.data;
+                    console.log(response.data)
+                    this.fetchComments()
+                })
+                .catch((err) => console.error(err));
         },
  
         moment(option) {
@@ -281,7 +293,8 @@ export default {
     },
     created() {
         this.fetchData();
-        this.fetchUserData()
+        this.fetchUserData();
+        this.fetchComments()
     },
 };
 </script>

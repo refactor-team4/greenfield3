@@ -48,9 +48,10 @@ CREATE TABLE posts (
 
 CREATE TABLE comments (
   commentId int NOT NULL AUTO_INCREMENT ,
-  content varchar(10000),
+  commentaire varchar(10000),
   posterUserName varchar(50),
   posterPicture varchar(1000),
+  commenter int(8),
   postId int ,
   createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 

@@ -15,6 +15,20 @@ module.exports={
             }
         );
     },
+    GetUserDetailsByUserName: (req, res) => {
+        console.log('sssssssssssss :', req.body)
+        db.query(
+            "select * from users where userName= ?" ,
+            [req.body],
+            (err, result) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.send(result[0]);
+                }
+            }
+        );
+    },
    find_all : (result) => {
     db.query("SELECT * FROM users", (err, results) => {             
         if(err) {
