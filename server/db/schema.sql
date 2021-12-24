@@ -2,24 +2,15 @@ DROP DATABASE IF EXISTS youcamp;
 CREATE DATABASE youcamp;
 USE youcamp;
 
--- CREATE TABLE test (
---   userId int  NOT NULL AUTO_INCREMENT ,
---   userName varchar(255),
---   PRIMARY KEY(userId)
--- );
 CREATE TABLE users (
   userId int NOT NULL AUTO_INCREMENT ,
   userName varchar (255),
-  firstName varchar(255),
+  email varchar(255),
   Adress varchar (255),
-  phoneNumber varchar(255),
-  imgUrl varchar(255)  ,
+  image varchar(255)  ,
   password varchar(255),
   PRIMARY KEY (userId)
 );
-
-
-
 
 CREATE TABLE products (
   productId int NOT NULL AUTO_INCREMENT ,
@@ -37,8 +28,10 @@ CREATE TABLE products (
 
 CREATE TABLE posts (
   postId int NOT NULL AUTO_INCREMENT ,
-  content varchar(255),
+  content varchar(10000),
   imgUrl varchar(255),
+  title varchar (255),
+  place varchar (255),
   createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   ownerId int(8),
   PRIMARY KEY (postId),
@@ -47,6 +40,7 @@ CREATE TABLE posts (
     REFERENCES users (userId)
     ON DELETE CASCADE
 );
+
 CREATE TABLE comments (
   commentId int NOT NULL AUTO_INCREMENT ,
   content varchar(50),
@@ -54,7 +48,6 @@ CREATE TABLE comments (
   postId int ,
   createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
- 
   PRIMARY KEY (commentId),
         CONSTRAINT commenter
     FOREIGN KEY (commenter)
