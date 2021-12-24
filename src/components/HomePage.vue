@@ -38,9 +38,9 @@
 		<div class="carousel-inner">
 			<div class="item with-overlay active" style="background-image: url('assets/img/trip_detail/4.jpg');">
 				<div class="carousel-caption center-txt">
-					<h1 class="main-header">Enjoy Adventure</h1>	
+					<h1 class="main-header">MY CAMP ADVENTURE</h1>	
 					<hr>
-					<p class="sub-header">Here you can really make your self happy</p>
+					<p class="sub-header">We are here to make your trip better join us to make your self more happy</p>
 					<a href="footer" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore More</a>
 				</div>
 			</div>
@@ -63,7 +63,7 @@
       </div>
       <h4 class="name">Ala Jridi</h4>
       <h5 class="detail">Junior Developer</h5>
-      <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean </p>
+      <p> leads design & UX, also writes code. Ever pondering his next beard trim. </p>
       <div class="social">
         <a href="https://www.facebook.com/profile.php?id=100005139885531" class="icon icon-facebook"></a>
         <a href="#" class="icon icon-twitter"></a>
@@ -79,7 +79,7 @@
 	</div>
 		<h4 class="name">Wael Ajabi</h4>
 		<h5 class="detail">Junior Developer</h5>
-		<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean </p>
+		<p>manages projects and team while fostering a healthy design crush. </p>
 		<div class="social">
 		<a href="https://www.facebook.com/profile.php?id=100005139885531" class="icon icon-facebook"></a>
 		<a href="#" class="icon icon-twitter"></a>
@@ -95,7 +95,7 @@
 		</div>
 		<h4 class="name">Ahmed Bouafif</h4>
 		<h5 class="detail">Junior Developer</h5>
-		<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean </p>
+		<p>handles new business and client strategy, bassist for hire. </p>
 		<div class="social">
 			<a href="https://www.facebook.com/profile.php?id=100005139885531" class="icon icon-facebook"></a>
 			<a href="#" class="icon icon-twitter"></a>
@@ -111,7 +111,7 @@
       </div>
       <h4 class="name">Sahar Boukari</h4>
       <h5 class="detail">Junior Developer</h5>
-      <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean </p>
+      <p> brings designs to life through front-end dev, always trying new hobbies. </p>
       <div class="social">
         <a href="#" class="icon icon-facebook"></a>
         <a href="#" class="icon icon-twitter"></a>
@@ -125,9 +125,9 @@
       <div class="image">
         <img src="https://ca.slack-edge.com/T02E5DNSTR6-U02E5F75SBA-07578c1aaff8-512" alt="">
       </div>
-      <h4 class="name">Saddem Aidy</h4>
+      <h4 class="name">Saddem Aydi</h4>
       <h5 class="detail">Junior Developer</h5>
-      <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean </p>
+      <p>develops for the web & mobile, susceptible to long hiccups.</p>
       <div class="social">
         <a href="#" class="icon icon-facebook"></a>
         <a href="#" class="icon icon-twitter"></a>
