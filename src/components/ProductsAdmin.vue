@@ -1,43 +1,78 @@
 <template>
-<div>
-<header class="nav-menu fixed">
-	<nav class="navbar normal">
-		<div class="container-fluid">
-		<div class="navbar-header">
-		<a class="navbar-brand" href="index.html">
-			<img src="assets/img/logo.png" alt="Mold Discover Html Template">
-		</a>	  
-	</div>
-		<div class="collapsed" >
-		<ul class="nav"> 
-<li >
-    <router-link to="/"><a>Home</a></router-link>
-</li>
-<li>
-	<router-link to="events"><a>Events</a></router-link>
-</li>
-<li >
-	<router-link to="products"><a>Products</a></router-link>
-</li>
-<li>
-	<router-link to="blogs"><a>Blogs</a></router-link>
-</li>
-<li> 
-		<router-link to="Login"><a><span class="icon-user"></span>Sign In</a></router-link>
-	</li>
- </ul> 
-</div>
+  <div>
+    <header class="nav-menu fixed">
+      <nav class="navbar normal">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">
+              <img
+                src="assets/img/logo.png"
+                alt="Mold Discover Html Template"
+              />
+            </a>
+          </div>
+          <div class="collapsed">
+            <ul class="nav">
+              <li>
+                <router-link to="/"><a>Home</a></router-link>
+              </li>
+              <li>
+                <router-link to="events"><a>Events</a></router-link>
+              </li>
+              <li>
+                <router-link to="products"><a>Products</a></router-link>
+              </li>
+              <li>
+                <router-link to="blogs"><a>Blogs</a></router-link>
+              </li>
+              <li>
+                <router-link to="Login"
+                  ><a><span class="icon-user"></span>Sign In</a></router-link
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
   </div>
-  </nav>
-</header>
+<div id="add">
+              <label class="label">Product Name</label>
+              <input
+                class="input"
+                type="text"
+                placeholder="Product Name"
+                v-model="productName"
+              />
+              <label class="label">img</label>
+              <input
+                class="input"
+                type="text"
+                placeholder="Product img"
+                v-model="productImg"
+              />
+              <label class="label">Price</label>
+              <input
+                class="input"
+                type="text"
+                placeholder="Price"
+                v-model="productPrice"
+              />
 
-	<main>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					
-<!-- <div class="sidebar"> -->
-	<!-- <div class="border-box">
+              <button
+                class="btn btn-primary hvr-sweep-to-right"
+                id="save"
+                v-on:click="addPost"
+              >
+                SAVE
+              </button>
+            </div>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <!-- <div class="sidebar"> -->
+            <!-- <div class="border-box">
 		<div class="box-title">Tour Search</div>
 		<div class="input-group">
 			<input type="text" class="form-control" placeholder="Search Site">
@@ -46,7 +81,7 @@
 			</div>
 		</div>
 	</div> -->
-<!-- 
+            <!-- 
 	<div class="border-box">
 		<div class="box-title">Choose Country</div>
 		<select class="form-control selectpicker">
@@ -54,10 +89,10 @@
 		</select>
 	</div> -->
 
-	<!-- <div class="border-box">
+            <!-- <div class="border-box">
 		<div class="box-title">Difficulty</div>
 		<div> -->
-			<!-- <div class="btn-group" data-toggle="buttons">
+            <!-- <div class="btn-group" data-toggle="buttons">
 				<label class="btn btn-default active"  data-toggle="tooltip" data-placement="bottom" title="Easy">
 					<input type="radio" name="options" id="option1" checked>
 					<span class="icon-easy"></span>
@@ -79,19 +114,19 @@
 					<span class="icon-extreme"></span>
 				</label>
 			</div> -->
-		<!-- </div> -->
-	<!-- </div> -->
+            <!-- </div> -->
+            <!-- </div> -->
 
-	<!-- <div class="border-box"> -->
-		<!-- <div class="box-title">Price Range</div>
+            <!-- <div class="border-box"> -->
+            <!-- <div class="box-title">Price Range</div>
 		<div class="price-widget">
 			<div id="price-slider"></div>
 			<div id="amount-min" class="pull-left"></div>
 			<div id="amount-max" class="pull-right"></div>
 		</div> -->
-	<!-- </div> -->
+            <!-- </div> -->
 
-	<!-- <div class="border-box">
+            <!-- <div class="border-box">
 		<div class="box-title">Category</div>
 		<ul class="checklist">
 			<li><input type="checkbox"> All Style</li>
@@ -102,8 +137,8 @@
 		</ul>
 	</div> -->
 
-	<!-- <div class="border-box"> -->
-		<!-- <div class="box-title">Duration</div>
+            <!-- <div class="border-box"> -->
+            <!-- <div class="box-title">Duration</div>
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="form-group">
@@ -117,7 +152,7 @@
 					</select>
 				</div>
 			</div> -->
-			<!-- <div class="col-sm-6">
+            <!-- <div class="col-sm-6">
 				<div class="form-group">
 					<label>Nights</label>
 					<select class="form-control selectpicker">
@@ -129,301 +164,134 @@
 					</select>
 				</div>
 			</div> -->
-		<!-- </div>
+            <!-- </div>
 	</div>
 
 </div> -->
-
- <div id="add">
-      <label class="label">Product Name</label>
-        <input
-          class="input"
-          type="text"
-          placeholder="Product Name"
-          v-model="productName"
-        />   
-      <label class="label">img</label>
-        <input
-          class="input"
-          type="text"
-          placeholder="Product img"
-          v-model="productImg"
-        />
-      <label class="label">Price</label>
-        <input
-          class="input"
-          type="text"
-          placeholder="Price"
-          v-model="productPrice"
-        />
- 
-      <button class="btn btn-primary hvr-sweep-to-right" id="save" @click="saveProduct" >SAVE</button>
-  </div>
-
-				</div>
-
-				<div class="col-sm-8">
-					<div class="row item">
-
-						<div class="col-sm-12 col-md-6">
-							<div class="item-grid">
-								<div class="item-img" style="background-image: url('assets/img/trip_detail/thumb_1.jpg');">	
-									<div class="item-overlay">
-										<a href="trip_detail.html"><span class="icon-binocular"></span></a>
-									</div>
-								</div>
-								<div class="item-desc">
-									<div class="item-info">
-										<h4 class="title"><a href="#">Routeburn Track</a></h4>
-									</div>
-
-									<div class="sub-title">
-										<span class="location">New Zealand</span>
-									</div>
-
-									<div class="item-detail">
-
-										<div class="right">
-											<div class="price">USD 121</div>
-											<a href="trip_detail.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>	
-						<div class="col-sm-12 col-md-6">
-							<div class="item-grid">
-								<div class="item-img" style="background-image: url('assets/img/trip_detail/thumb_2.jpg');">	
-									<div class="item-overlay">
-										<a href="trip_detail.html"><span class="icon-binocular"></span></a>
-									</div>
-								</div>
-								<div class="item-desc">
-									<div class="item-info">
-										<span class="icon-difficult"></span>
-										<h4 class="title"><a href="#">Fitz Roy Trek</a></h4>
-									</div>
-
-
-
-									<div class="item-detail">
-										
-										<div class="right">
-											<div class="price">USD 121</div>
-											<a href="trip_detail.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>	
-						<div class="col-sm-12 col-md-6">
-							<div class="item-grid">
-								<div class="item-img" style="background-image: url('assets/img/trip_detail/thumb_3.jpg');">	
-									<div class="item-overlay">
-										<a href="trip_detail.html"><span class="icon-binocular"></span></a>
-									</div>
-								</div>
-								<div class="item-desc">
-									<div class="item-info">
-										<span class="icon-hard"></span>
-										<h4 class="title"><a href="#">Annapurna Circuit</a></h4>
-									</div>
-
-
-
-									<div class="item-detail">
-		
-										<div class="right">
-											<div class="price">USD 121</div>
-											<a href="trip_detail.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>	
-						<div class="col-sm-12 col-md-6">
-							<div class="item-grid">
-								<div class="item-img" style="background-image: url('assets/img/trip_detail/thumb_4.jpg');">	
-									<div class="item-overlay">
-										<a href="trip_detail.html"><span class="icon-binocular"></span></a>
-									</div>
-								</div>
-								<div class="item-desc">
-									<div class="item-info">
-										<span class="icon-medium"></span>
-										<h4 class="title"><a href="#">Overland Track</a></h4>
-									</div>
-
-									<div class="sub-title">
-										<span class="location">Australia</span>
-										
-									</div>
-
-									<div class="item-detail">
-										<div class="left">
-								
-										</div>
-										<div class="right">
-											<div class="price">USD 121</div>
-											<a href="trip_detail.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>	
-
-						<div class="col-sm-12 col-md-6">
-							<div class="item-grid">
-								<div class="item-img" style="background-image: url('assets/img/trip_detail/thumb_5.jpg');">	
-									<div class="item-overlay">
-										<a href="trip_detail.html"><span class="icon-binocular"></span></a>
-									</div>
-								</div>
-								<div class="item-desc">
-									<div class="item-info">
-										<span class="icon-difficult"></span>
-										<h4 class="title"><a href="#">The Haute Route</a></h4>
-									</div>
-
-									<div class="sub-title">
-										<span class="location">France-Switzerland</span>
-									</div>
-
-									<div class="item-detail">
-										<div class="left">
-							
-										</div>
-										<div class="right">
-											<div class="price">USD 121</div>
-											<a href="trip_detail.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>	
-
-						<div class="col-sm-12 col-md-6">
-							<div class="item-grid">
-								<div class="item-img" style="background-image: url('assets/img/trip_detail/thumb_6.jpg');">	
-									<div class="item-overlay">
-										<a href="trip_detail.html"><span class="icon-binocular"></span></a>
-									</div>
-								</div>
-								<div class="item-desc">
-									<div class="item-info">
-										<span class="icon-hard"></span>
-										<h4 class="title"><a href="#">Torres del Paine Circuit</a></h4>
-									</div>
-
-									<div class="sub-title">
-										<span class="location">Chile</span>
-									</div>
-
-									<div class="item-detail">
-										<div class="left">
-											
-										</div>
-										<div class="right">
-											<div class="price">USD 121</div>
-											<a href="trip_detail.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>	
-
-					</div>	
- 
-
-				</div>
-			</div>
 		</div>
-	</main>
-	<footer id="footer">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-7 col-md-3">
-				<h3>Mold Discover</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, quia, architecto? A, reiciendis eveniet! Esse est eaque adipisci natus rerum laudantium accusamus magni.</p>
+		</div><div id="grid">
+            <article id="products"
+              v-for="(item, index) in this.products"
+              :key="index"
+              class="post-list full-img"
+            >
+              <img class="post-img" v-bind:src="item.imgUrl" />
+              <div class="post-summary">
+                <header>
+                  <h4 class="post-title">
+                    <a href="#">{{ item.productName }}</a>
+                  </h4>
+                  <p class="byline author vcard">
+                    <span class="italic">By</span>
+                    &nbsp;
+                    <span class="dot">·</span>
+                    <span class="updated">
+                      {{ moment(item.createdAt) }}
+                    </span>
+                    <span class="dot">·</span>
+                    <span class="comments">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </span>
+                  </p>
+                </header>
+                <div class="post-excerpt">
+                  {{ item.price }}
+                </div>
+                <router-link to="/Singleblog">
+                  <span id="delete" class="btn btn-primary hvr-sweep-to-right">
+                    Delete
+                  </span>
+                </router-link>
+              </div>
+            </article>
 			</div>
-			<div class="col-sm-5 col-md-2">
-				<h3>Quick Link</h3>
-				<ul>
-					<li>Holiday Package</li>
-					<li>Summer Adventure</li>
-					<li>Bus and Trasnportation</li>
-					<li>Ticket and Hotel Booking</li>
-					<li>Trek and Hikings</li>
-				</ul>
-			</div>
-			<div class="col-sm-7 col-md-4">
-				<h3>Newsletter Signup</h3>
-				<p>Subscribe to our weekly newsletter to get news and update</p>
-				<br>
-				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Your Email">
-					<div class="input-group-btn">
-						<button class="btn btn-primary">Subscribe</button>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-5 col-md-2">
-				<h3>Contact Info</h3>
-				<ul>
-					<li>Mold Discover</li>
-					<li>info@moldthemes.com</li>
-				</ul>
-				<!-- <div class="clearfix">
-					<div class="social-icon-list">
-						<ul>
-							<li><a href="https://twitter.com/moldthemes" class="icon-twitter"></a></li>
-							<li><a href="mailto:info@moldthemes.com" class="icon-mail"></a></li>
-						</ul>
-					</div>
-				</div> -->
-			</div>
-		</div>
-	</div>
- 
-</footer>
-</div>
+
+      </div>
+    </main>
 </template>
 <script>
 import axios from "axios";
+import moment from "moment";
 export default {
-  name: 'Products',
-  props: ['data'],
-mounted(){
-   console.log(JSON.parse(this.data));
- },
+  name: "Products",
+  props: ["data"],
+  mounted() {
+    console.log(this.products);
+  },
 
-    data() {
+  data() {
     return {
       productName: "",
       productPrice: "",
-      productimg : ""
+      productImg: "",
+	uploadedImg: false,
+      products: [],
     };
   },
+
   methods: {
-    // Create New product
-    async saveProduct() {
-      try {
-        await axios.post("http://localhost:5000/products", {
-          product_name: this.productName,
-          product_price: this.productPrice,
-        });
-        this.productName = "";
-        this.productPrice = "";
-        this.productimg = ""
-        this.$router.push("/");
-      } catch (err) {
-        console.log(err);
-      }
+    moment(option) {
+      return moment(option).fromNow();
     },
+    fetchData() {
+      axios
+        .get("http://localhost:5000/admin/fetch")
+        .then(({ data }) => {
+          this.products = { data }.data;
+          console.log("products :", this.products);
+        })
+        .catch((err) => console.error(err));
+    },
+    uploadImage(e) {
+      const files = e.target.files;
+      const data = new FormData();
+      data.append("file", files[0]);
+      data.append("upload_preset", "easy-life");
+
+      axios
+        .post("https://api.cloudinary.com/v1_1/REZmed/image/upload", data)
+        .then(({ data }) => {
+          console.log(data);
+          this.ImgUrl = data.secure_url;
+          this.uploadedImg = !this.uploadedImg;
+        })
+        .catch((err) => console.error(err));
+    },
+    addPost() {
+      let post = {
+        productName: this.productName,
+        productPrice: this.productPrice,
+        productImg: this.productImg,
+        products: [],
+      };
+      console.log("post :", post);
+      axios
+        .post("http://localhost:5000/admin/add", post)
+        .then((response) => {
+          console.log("response.data:", response.data);
+          this.fetchData();
+        })
+        .catch((err) => console.log(err));
+    },
+    search() {
+      var searchedPlace = this.searchedPlace;
+      console.log(searchedPlace);
+      axios
+        .get(`http://localhost:5000/blogs/searchBlogs/${searchedPlace}`)
+        .then(({ data }) => {
+          this.SearchedBlogs = { data }.data;
+          this.searched = !this.searched;
+          this.initial = !this.initial;
+          console.log("searchedBlogs :", this.SearchedBlogs);
+        })
+        .catch((err) => console.log(err));
+    },
+  },
+  created() {
+    this.fetchData();
   },
 };
 
- 
 // export default {
 //   name: "AddProduct",
 //   data() {
@@ -451,25 +319,48 @@ mounted(){
 //     },
 //   },
 // };
-
 </script>
 
 <style scoped>
-#add{
-border-radius: 50px;
-width: 600px;
-background: #e0e0e0;
-box-shadow:  20px 20px 60px #bebebe,
-             -20px -20px 60px #ffffff;
-padding: 30px;
-position: relative;
-right: 80%;
-bottom: -10%;
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows: repeat(2, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 5px;
+#delete{background-color: crimson;}
+#add {
+  border-radius: 50px;
+  width: 600px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  padding: 30px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 5px;
+  top: 400px;
+  left: 100px;
 }
-#save{margin-left: 30%;}
+#save {
+  margin-left: 30%;
+}
+#products {
+	position: relative;
+	left: 40%;
+  width: 400px;
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  padding: 30px;
+}
+#grid{width: 800px;
+ display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
+    gap: 5rem;
+    justify-content: center;
+    align-items: left;
+    position: relative;
+	left: 23%;
+	
+
+}
+
 </style>

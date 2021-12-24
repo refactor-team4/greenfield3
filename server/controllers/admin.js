@@ -38,7 +38,34 @@ module.exports={
               }else{
                  if(response){res.send(result)}
                  else{res.send("password is wrong")}
-              }})}})}}
+              }})}})},
+              PostOne: (req,res)=>{
+                console.log(req.body)
+                db.query("insert into products (productName,price,img) values(?,?,?)",[req.body.productName,req.body.productPrice,req.body.productImg],
+                (err,result)=>{
+                    if(err){
+                        console.log(err);
+                    }else{
+                        db.query("select * from posts",(err,result)=>{
+                            if(err){
+                                console.log(err);
+                            }else{
+                                res.send(result)
+                            }
+                        })
+                    }
+                })
+            },
+            GetAll:(req,res)=>{
+                db.query("select * from products",(err,result)=>{
+                    if(err){
+                        console.log(err);
+                    }else{
+                        res.send(result)
+                    }
+                })
+            }
+            }
       
             
         

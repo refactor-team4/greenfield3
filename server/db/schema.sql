@@ -23,9 +23,6 @@ CREATE TABLE admins (
 
 );
 
-
-
-
 CREATE TABLE products (
   productId int NOT NULL AUTO_INCREMENT ,
   productName varchar(255),
@@ -42,8 +39,10 @@ CREATE TABLE products (
 
 CREATE TABLE posts (
   postId int NOT NULL AUTO_INCREMENT ,
-  content varchar(255),
+  content varchar(10000),
   imgUrl varchar(255),
+  title varchar (255),
+  place varchar (255),
   createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   ownerId int(8),
   PRIMARY KEY (postId),
@@ -52,6 +51,7 @@ CREATE TABLE posts (
     REFERENCES users (userId)
     ON DELETE CASCADE
 );
+
 CREATE TABLE comments (
   commentId int NOT NULL AUTO_INCREMENT ,
   content varchar(50),
@@ -59,7 +59,6 @@ CREATE TABLE comments (
   postId int ,
   createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
- 
   PRIMARY KEY (commentId),
         CONSTRAINT commenter
     FOREIGN KEY (commenter)
