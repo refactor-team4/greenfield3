@@ -2,7 +2,20 @@ var db= require("../db/index");
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 module.exports={
-   find_all: (result) => {
+    GetUserDetails: (req, res) => {
+        db.query(
+            "select * from users where userId= ?" ,
+            [req.params.userId],
+            (err, result) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.send(result[0]);
+                }
+            }
+        );
+    },
+   find_all : (result) => {
     db.query("SELECT * FROM users", (err, results) => {             
         if(err) {
             console.log(err);
