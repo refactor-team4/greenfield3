@@ -359,10 +359,11 @@ import axios from "axios";
 import moment from "moment";
 export default {
   name: 'Blogs',
+  
   props: ['data'],
-  mounted(){
-	console.log(JSON.parse(this.data))
-  },
+    // mounted(){
+	// console.log(JSON.parse(this.data))
+    // },
     data(){
         return {
             initial: true,
