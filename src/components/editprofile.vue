@@ -26,7 +26,7 @@
                     <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" v-model="country"></div>
                     <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
                 </div> -->
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button"  v-on:click="test" >Save Profile</button></div>
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button"  v-on:click=" editdata" >Save Profile</button></div>
             </div>
         </div>
         <!-- <div class="col-md-4">
@@ -95,6 +95,7 @@ export default {
    })
    .catch((err)=> console.log(err))
       }
+
   }
 }
 </script>
