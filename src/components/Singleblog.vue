@@ -243,6 +243,7 @@ export default {
                 .then((response) => {
                     this.blog = response.data;
                     this.ownerId= response.data.ownerId
+                    this.fetchComments()
                 })
                 .catch((err) => console.error(err));
         },
@@ -258,6 +259,7 @@ export default {
         },
             fetchComments() {
                 var postId=this.blog.postId
+                console.log('xxxx :', this.blog.postId)
             axios
                 .get('http://localhost:5000/comments/getComments', postId)
                 .then((response) => {
@@ -294,7 +296,7 @@ export default {
     created() {
         this.fetchData();
         this.fetchUserData();
-        this.fetchComments()
+        
     },
 };
 </script>
