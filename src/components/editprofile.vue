@@ -3,6 +3,7 @@
     <div class="row">
         <div class="col-md-3 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
+                <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" @change="uploadImage">
         </div>
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
@@ -25,7 +26,7 @@
                     <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" v-model="country"></div>
                     <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
                 </div> -->
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button"  v-on:click="test" >Save Profile</button></div>
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button"  v-on:click=" editdata" >Save Profile</button></div>
             </div>
         </div>
         <!-- <div class="col-md-4">
@@ -43,17 +44,8 @@
 import axios from "axios";
 
 export default {
-//  props:{
-//     userName:string,
-//     firstName:string,
-//     Adress :string,
-//     myState :string,
-//     area :string,
-//     phoneNumber:string,
-//     email:string
-//  },
-
-data(){
+ props:["data"],
+ data(){
     return {
     userName:"",
     firstName:"",
@@ -66,8 +58,22 @@ data(){
 },
 
   methods:{
+
+      uploadImage(e) {
+            const files = e.target.files;
+            const data = new FormData();
+            data.append("file", files[0]);
+            data.append("upload_preset", "easy-life");
+            axios.post("https://api.cloudinary.com/v1_1/REZmed/image/upload", data)
+                .then(({ data }) => {
+					console.log(data)
+                    this.profilePicture= data.secure_url;
+					this.uploadedImg=!this.uploadedImg              
+                    })
+                .catch((err) => console.error(err));
+        },
        fetchdata(){
-    axios.get('/users/profile')
+    axios.get('http://localhost:5000/users/myprofile')
     .then(response => {console.log(response)
     });
    
@@ -89,6 +95,7 @@ data(){
    })
    .catch((err)=> console.log(err))
       }
+
   }
 }
 </script>

@@ -15,7 +15,6 @@ CREATE TABLE users (
   password varchar(255),
   PRIMARY KEY (userId)
 );
-
 CREATE TABLE products (
   productId int NOT NULL AUTO_INCREMENT ,
   productName varchar(255),
@@ -28,9 +27,6 @@ CREATE TABLE products (
   FOREIGN KEY (buyerId) REFERENCES users(userId),
   PRIMARY KEY (productId)
 );
-
-
-
 CREATE TABLE posts (
   postId int NOT NULL AUTO_INCREMENT ,
   content varchar(10000),
@@ -45,15 +41,17 @@ CREATE TABLE posts (
     REFERENCES users (userId)
     ON DELETE CASCADE
 );
-
 CREATE TABLE comments (
   commentId int NOT NULL AUTO_INCREMENT ,
   content varchar(10000),
+<<<<<<< HEAD
+  commenter int(8),
+=======
   posterUserName varchar(50),
   posterPicture varchar(1000),
+>>>>>>> 306b03e100a78f30cdd907965f4211404285bc95
   postId int ,
   createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-
   PRIMARY KEY (commentId),
         CONSTRAINT commenter
     FOREIGN KEY (commenter)
@@ -64,5 +62,3 @@ CREATE TABLE comments (
     REFERENCES posts (postId)
     ON DELETE CASCADE
 );
-
-

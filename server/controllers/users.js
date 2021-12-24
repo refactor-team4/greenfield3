@@ -38,15 +38,15 @@ find_One:(id, result) => {
 },
 update_One:(data, id, result) => {
     console.log("");
-    // id=req.param.id
-    // db.query("UPDATE product SET product_name = ?, product_price = ? WHERE product_id = ?", [data.product_name, data.product_price, id], (err, results) => {             
-    //     if(err) {
-    //         console.log(err);
-    //         result(err, null);
-    //     } else {
-    //         result(null, results);
-    //     }
-    // });   
+    id=req.param.id
+    db.query("UPDATE product SET product_name = ?, product_price = ? WHERE product_id = ?", [data.product_name, data.product_price, id], (err, results) => {             
+        if(err) {
+            console.log(err);
+            result(err, null);
+        } else {
+            result(null, results);
+        }
+    });   
 },
 remove_One:(id, result) => {
     id=req.param.id
