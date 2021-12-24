@@ -5,8 +5,10 @@ router.route('/details/:userId').get(UsersController.GetUserDetails)
 
 
 
-
-
+router.route("/Singup")
+.post(UsersController.Signup);
+router.route("/Login")
+.post(UsersController.Login)
 
 
 
