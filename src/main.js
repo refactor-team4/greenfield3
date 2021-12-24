@@ -8,6 +8,7 @@ import Products from './components/Products.vue'
 import Blogs from './components/Blogs.vue'
 import Singleblog from './components/Singleblog.vue'
 import Signup from './components/Signup.vue'
+import ProductsAdmin from './components/ProductsAdmin.vue'
 
 
 const routes = [
@@ -17,7 +18,10 @@ const routes = [
   { path: "/products", name: "Products", component: Products},
   { path: "/blogs", name: "Blogs",props:true,meta:{title : "Blogs"}, component: Blogs},
   { path: "/singleblog", name: "Singleblog", component: Singleblog},
-  { path: "/signup", name: "Signup", component: Signup}
+  { path: "/signup", name: "Signup", component: Signup},
+  { path: "/ProductsAdmin", name: "ProductsAdmin", component: ProductsAdmin}
+
+  
 
 ];
 

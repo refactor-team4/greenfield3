@@ -3,6 +3,7 @@ var express = require("express");
 var app = express();
 var cors = require("cors");
 app.use(cors({ credentials: true, sameSite: true }));
+// eslint-disable-next-line no-unused-vars
 const mysql = require('mysql2');
 
 
@@ -11,6 +12,7 @@ const comments=require("./routers/comments")
 const posts=require("./routers/posts")
 const users=require("./routers/users")
 const products=require("./routers/products")
+const blogs=require("./routers/blogs")
 
 /******************** Middleware ********************/
 
@@ -24,7 +26,7 @@ app.use("/users", users)
 app.use("/comments", comments)
 app.use("/posts", posts)
 app.use("/products", products)
-
+app.use("/blogs", blogs)
 /**************** Listening Requests ****************/
 var port=5000
 app.listen(port, function () {
