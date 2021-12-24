@@ -455,9 +455,7 @@
           <div class="col-sm-7 col-md-3">
             <h3>Mold Discover</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Consequuntur, quia, architecto? A, reiciendis eveniet! Esse est
-              eaque adipisci natus rerum laudantium accusamus magni.
+ MyCamp is the leader in online event registrations from 5k running races and marathons to softball leagues and local events. MyCamp also makes it easy to learn and prepare for all the things you love to do with expert resources, training plans and fitness calculators.
             </p>
           </div>
           <div class="col-sm-5 col-md-2">
