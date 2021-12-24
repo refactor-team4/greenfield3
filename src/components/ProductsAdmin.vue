@@ -198,7 +198,7 @@
                     class="input"
                     type="text"
                     placeholder="Product img"
-                    v-model="productImg" 
+                    v-model="productImg"
                   />
                 </div>
               </div>
@@ -470,26 +470,11 @@
               <li>Trek and Hikings</li>
             </ul>
           </div>
-          <div class="col-sm-7 col-md-4">
-            <h3>Newsletter Signup</h3>
-            <p>Subscribe to our weekly newsletter to get news and update</p>
-            <br />
-            <div class="input-group">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Your Email"
-              />
-              <div class="input-group-btn">
-                <button class="btn btn-primary">Subscribe</button>
-              </div>
-            </div>
-          </div>
           <div class="col-sm-5 col-md-2">
             <h3>Contact Info</h3>
             <ul>
               <li>Mold Discover</li>
-              <li>info@moldthemes.com</li>
+              <li>mycamp@gmail.com</li>
             </ul>
           </div>
         </div>
@@ -518,10 +503,9 @@ export default {
         await axios.post("http://localhost:5000/products", {
           product_name: this.productName,
           product_price: this.productPrice,
-          product_img : this.productimg
+          product_img: this.productimg,
         });
         this.productName = "";
-        console.log(this.productName);
         this.productPrice = "";
         this.productimg = "";
         this.$router.push("/");

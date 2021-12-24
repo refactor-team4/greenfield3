@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 var db= require("../db/index");
 module.exports={
     PostOne: (req,res)=>{

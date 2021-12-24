@@ -5,18 +5,21 @@ USE youcamp;
 CREATE TABLE users (
   userId int NOT NULL AUTO_INCREMENT ,
   userName varchar (255),
-  email varchar(255),
+  firstName varchar(255),
   Adress varchar (255),
-  image varchar(255)  ,
+  myState varchar (255),
+  area varchar (255),
+  phoneNumber varchar(255),
+  profilePicture varchar(5000)  ,
+  email varchar(255),
   password varchar(255),
   PRIMARY KEY (userId)
 );
-
 CREATE TABLE products (
   productId int NOT NULL AUTO_INCREMENT ,
   productName varchar(255),
   price int ,
-  img varchar(255),
+  img varchar(5000),
   buyerId int ,
   ownerId int(8),
   createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -24,12 +27,10 @@ CREATE TABLE products (
   FOREIGN KEY (buyerId) REFERENCES users(userId),
   PRIMARY KEY (productId)
 );
-
-
 CREATE TABLE posts (
   postId int NOT NULL AUTO_INCREMENT ,
   content varchar(10000),
-  imgUrl varchar(255),
+  imgUrl varchar(5000),
   title varchar (255),
   place varchar (255),
   createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -40,14 +41,12 @@ CREATE TABLE posts (
     REFERENCES users (userId)
     ON DELETE CASCADE
 );
-
 CREATE TABLE comments (
   commentId int NOT NULL AUTO_INCREMENT ,
-  content varchar(50),
+  content varchar(10000),
   commenter int(8),
   postId int ,
   createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-
   PRIMARY KEY (commentId),
         CONSTRAINT commenter
     FOREIGN KEY (commenter)
