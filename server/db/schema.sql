@@ -26,7 +26,7 @@ CREATE TABLE admins (
 CREATE TABLE products (
   productId int NOT NULL AUTO_INCREMENT ,
   productName varchar(255),
-  price int ,
+  price varchar(255) ,
   img varchar(255),
   buyerId int ,
   ownerId int(8),
@@ -50,6 +50,21 @@ CREATE TABLE posts (
     FOREIGN KEY (ownerId)
     REFERENCES users (userId)
     ON DELETE CASCADE
+);
+
+CREATE TABLE events (
+  productId int NOT NULL AUTO_INCREMENT ,
+  eventName varchar(255),
+  description varchar(255),
+  price varchar(255) ,
+  img varchar(255),
+  time varchar(255),
+  buyerId int ,
+  ownerId int(8),
+  createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (ownerId) REFERENCES users(userId),
+  FOREIGN KEY (buyerId) REFERENCES users(userId),
+  PRIMARY KEY (productId)
 );
 
 CREATE TABLE comments (

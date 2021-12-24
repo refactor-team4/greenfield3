@@ -14,6 +14,7 @@ const users=require("./routers/users")
 const products=require("./routers/products")
 const admin=require("./routers/admin")
 const blogs=require("./routers/blogs")
+const events=require("./routers/events")
 
 /******************** Middleware ********************/
 
@@ -28,6 +29,8 @@ app.use("/comments", comments)
 app.use("/posts", posts)
 app.use("/products", products)
 app.use("/admin", admin)
+app.use("/events", events)
+
 
 app.use("/blogs", blogs)
 /**************** Listening Requests ****************/

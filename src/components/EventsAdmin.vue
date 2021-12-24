@@ -29,28 +29,40 @@
     </header>
   </div>
 <div id="add">
-              <label class="label">Product Name</label>
+              <label class="label">Events Name</label>
               <input
                 class="input"
                 type="text"
-                placeholder="Product Name"
-                v-model="productName"
+                placeholder="Events Name"
+                v-model="EventsName"
               />
-              <label class="label">img</label>
+              <label class="label">Description</label>
               <input
                 class="input"
                 type="text"
-                placeholder="Product img"
+                placeholder="Description"
+                v-model="Description"
+              />
+               <label class="label">price</label>
+              <input
+                class="input"
+                type="text"
+                placeholder="price"
+                v-model="price"
+              /><label class="label">image</label>
+              <input
+                class="input"
+                type="text"
+                placeholder="image"
                 v-model="productImg"
               />
-              <label class="label">Price</label>
+              <label class="label">date</label>
               <input
                 class="input"
                 type="text"
-                placeholder="Price"
-                v-model="productPrice"
+                placeholder="date"
+                v-model="date"
               />
-
               <button
                 class="btn btn-primary hvr-sweep-to-right"
                 id="save"
@@ -166,15 +178,15 @@
  <router-link to="EventsAdmin"><button  class="btn btn-primary hvr-sweep-to-right hey">access your events page</button></router-link></div>
 		</div><div id="grid">
             <article id="products"
-              v-for="(item, index) in this.products"
+              v-for="(item, index) in this.events"
               :key="index"
               class="post-list full-img"
             >
-              <img class="post-img" v-bind:src="item.imgUrl" />
+              <img class="post-img" v-bind:src="item.productImg" />
               <div class="post-summary">
                 <header>
                   <h4 class="post-title">
-                    <a href="#">{{ item.productName }}</a>
+                    <a href="#">{{ item.EventsName }}</a>
                   </h4>
                   <p class="byline author vcard">
                     <span class="italic">By</span>
@@ -212,11 +224,13 @@ export default {
 
   data() {
     return {
-      productName: "",
-      productPrice: "",
-      productImg: "",
+      EventsName: "",
+      Description: "",
+      price: "",
+      productImg:"",
+      date: "",
 	uploadedImg: false,
-      products: [],
+      events: [],
     };
   },
 
@@ -226,10 +240,10 @@ export default {
     },
     fetchData() {
       axios
-        .get("http://localhost:5000/admin/fetch")
+        .get("http://localhost:5000/events/fetch")
         .then(({ data }) => {
           this.products = { data }.data;
-          console.log("products :", this.products);
+          console.log("products :", this.events);
         })
         .catch((err) => console.error(err));
     },
@@ -250,18 +264,20 @@ export default {
     },
     remove(name){
 	console.log(name);
-axios.delete(`http://localhost:5000/admin/delete/${name}`).then(()=>{this.fetchData()})
+axios.delete(`http://localhost:5000/events/delete/${name}`).then(()=>{this.fetchData()})
   },
     addPost() {
       let post = {
-        productName: this.productName,
-        productPrice: this.productPrice,
+        EventsName: this.EventsName,
+        Description: this.Description,
+        price: this.price,
         productImg: this.productImg,
-        products: [],
+        date: this.date,
+        events: [],
       };
       console.log("post :", post);
       axios
-        .post("http://localhost:5000/admin/add", post)
+        .post("http://localhost:5000/events/add", post)
         .then((response) => {
           console.log("response.data:", response.data);
           this.fetchData();

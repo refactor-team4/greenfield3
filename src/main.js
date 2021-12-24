@@ -10,10 +10,11 @@ import Singleblog from './components/Singleblog.vue'
 import Signup from './components/Signup.vue'
 import AdminLogin from './components/AdminLogin.vue'
 import ProductsAdmin from './components/ProductsAdmin.vue'
-
+import EventsAdmin from './components/EventsAdmin'
 
 const routes = [
   { path: "/", name: "HomePage", component: HomePage },
+  { path: "/EventsAdmin", name: "HomePage", component: EventsAdmin },
   { path: "/login", name: "Login", component: Login },
   { path: "/events", name: "Events", component: Events},
   { path: "/products", name: "Products", component: Products},
