@@ -30,28 +30,6 @@
   </div>
   </nav>
 </header>
-	<section class="page-img" style="background-image: url('assets/img/coast/6.jpg');">
-		<div class="page-img-txt container-fluid">
-			<div class="row">
-				<div class="col-sm-4">
-					<br>
-					<div class="map-image">
-						<img class="img-responsive" src="assets/img/map/africa.png" alt="">
-					</div>
-					<br>
-					<br>
-				</div>
-				<div class="col-sm-7">
-					<h1>Africa</h1>
-					<div class="term-description">
-						<p>Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu.</p>
-
-						<p>Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui.</p>
-					</div>					
-				</div>
-			</div>
-		</div>
-	</section>
 
 	<main>
 		<div class="container">
@@ -156,45 +134,30 @@
 
 </div> -->
 
- <div>
-    <div class="field">
+ <div id="add">
       <label class="label">Product Name</label>
-      <div class="control">
         <input
           class="input"
           type="text"
           placeholder="Product Name"
           v-model="productName"
-        />
-      </div>
-    </div>
-        <div class="field">
+        />   
       <label class="label">img</label>
-      <div class="control">
         <input
           class="input"
           type="text"
           placeholder="Product img"
           v-model="productImg"
         />
-      </div>
-    </div>
- 
-    <div class="field">
       <label class="label">Price</label>
-      <div class="control">
         <input
           class="input"
           type="text"
           placeholder="Price"
           v-model="productPrice"
         />
-      </div>
-    </div>
  
-    <div class="control">
-      <button class="button is-success" @click="saveProduct">SAVE</button>
-    </div>
+      <button class="btn btn-primary hvr-sweep-to-right" id="save" @click="saveProduct" >SAVE</button>
   </div>
 
 				</div>
@@ -429,9 +392,11 @@
 import axios from "axios";
 export default {
   name: 'Products',
-  props: {
-    msg: String
-  },
+  props: ['data'],
+mounted(){
+   console.log(JSON.parse(this.data));
+ },
+
     data() {
     return {
       productName: "",
@@ -490,5 +455,21 @@ export default {
 </script>
 
 <style scoped>
-
+#add{
+border-radius: 50px;
+width: 600px;
+background: #e0e0e0;
+box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+padding: 30px;
+position: relative;
+right: 80%;
+bottom: -10%;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 5px;
+}
+#save{margin-left: 30%;}
 </style>

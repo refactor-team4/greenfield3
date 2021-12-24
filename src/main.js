@@ -21,8 +21,13 @@ const routes = [
   { path: "/singleblog", name: "Singleblog", component: Singleblog},
   { path: "/signup", name: "Signup", component: Signup},
   { path: "/admin", name: "Admin", component: AdminLogin},
-  { path: "/ProductsAdmin", name: "ProductsAdmin", component: ProductsAdmin}
-
+{
+      path: "/ProductsAdmin",
+      name: "ProductsAdmin",
+      props: true,
+      meta: { title: "ProductsAdmin" },
+      component: ProductsAdmin
+    }
   
 
 ];

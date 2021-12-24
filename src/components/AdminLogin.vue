@@ -49,7 +49,6 @@ data(){
         username:'',
         password:'',
 		error:"",
-        path:""
         }    
 },
     methods:{
@@ -62,7 +61,8 @@ data(){
         } else if (data === 'password is wrong') {
           this.error=data
         } else {
-            this.$router.push("/ProductsAdmin")
+            this.$router.push({name:"ProductsAdmin",params: { data: JSON.stringify(data)
+ }})
 		}})}}}
 
 </script>
