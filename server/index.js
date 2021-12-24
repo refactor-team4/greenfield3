@@ -15,6 +15,7 @@ const products=require("./routers/products")
 const editprofile=require("./routers/editprofile")
 const editpassword=require("./routers/editpassword")
 const blogs=require("./routers/blogs")
+const myprofile=require("./routers/profile")
 
 /******************** Middleware ********************/
 
@@ -30,6 +31,7 @@ app.use("/posts", posts)
 app.use("/products", products)
 app.use("/editprofile", editprofile)
 app.use("/editpassword", editpassword)
+app.use("/editpassword", myprofile)
 app.use("/blogs", blogs)
 /**************** Listening Requests ****************/
 var port=5000
