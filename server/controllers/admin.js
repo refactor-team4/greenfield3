@@ -46,7 +46,7 @@ module.exports={
                     if(err){
                         console.log(err);
                     }else{
-                        db.query("select * from posts",(err,result)=>{
+                        db.query("select * from products",(err,result)=>{
                             if(err){
                                 console.log(err);
                             }else{
@@ -64,8 +64,24 @@ module.exports={
                         res.send(result)
                     }
                 })
-            }
-            }
+            },
+            delete:(req,res)=>{
+                console.log(req.params);
+                db.query("DELETE FROM products WHERE productName=?",[req.params.name],
+                (err,result)=>{
+                    if(err){
+                        console.log(err);
+                    }else{
+                        db.query("select * from products",(err,result)=>{
+                            if(err){
+                                console.log(err);
+                            }else{
+                                res.send(result)
+                            }
+                        })
+                    }
+                })}}
+            
       
             
         

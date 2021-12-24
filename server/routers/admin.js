@@ -13,7 +13,8 @@ router.route("/add")
 router.route("/fetch")
 .get(AdminController.GetAll);
 
-
+router.route("/delete/:name")
+.delete(AdminController.delete);
 
 
 

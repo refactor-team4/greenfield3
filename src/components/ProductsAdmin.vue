@@ -169,6 +169,8 @@
 
 </div> -->
 		</div>
+		<div id="buttons" ><button   class="btn btn-primary hvr-sweep-to-right hey"
+>access your products page</button> <button  class="btn btn-primary hvr-sweep-to-right hey">access your events page</button></div>
 		</div><div id="grid">
             <article id="products"
               v-for="(item, index) in this.products"
@@ -197,11 +199,7 @@
                 <div class="post-excerpt">
                   {{ item.price }}
                 </div>
-                <router-link to="/Singleblog">
-                  <span id="delete" class="btn btn-primary hvr-sweep-to-right">
-                    Delete
-                  </span>
-                </router-link>
+                <span  @click="remove(item.productName)" id="delete" class="btn btn-primary hvr-sweep-to-right" >Delete</span>
               </div>
             </article>
 			</div>
@@ -257,6 +255,10 @@ export default {
         })
         .catch((err) => console.error(err));
     },
+    remove(name){
+	console.log(name);
+axios.delete(`http://localhost:5000/admin/delete/${name}`).then(()=>{this.fetchData()})
+  },
     addPost() {
       let post = {
         productName: this.productName,
@@ -270,19 +272,6 @@ export default {
         .then((response) => {
           console.log("response.data:", response.data);
           this.fetchData();
-        })
-        .catch((err) => console.log(err));
-    },
-    search() {
-      var searchedPlace = this.searchedPlace;
-      console.log(searchedPlace);
-      axios
-        .get(`http://localhost:5000/blogs/searchBlogs/${searchedPlace}`)
-        .then(({ data }) => {
-          this.SearchedBlogs = { data }.data;
-          this.searched = !this.searched;
-          this.initial = !this.initial;
-          console.log("searchedBlogs :", this.SearchedBlogs);
         })
         .catch((err) => console.log(err));
     },
@@ -322,7 +311,9 @@ export default {
 </script>
 
 <style scoped>
-#delete{background-color: crimson;}
+#delete{background-color: crimson;
+cursor: pointer;}
+#delete :hover{background-color: rgb(99, 22, 22) ; }
 #add {
   border-radius: 50px;
   width: 600px;
@@ -362,5 +353,13 @@ export default {
 	
 
 }
-
+#buttons{
+	position: relative;
+	bottom: 90px;
+	right: 10%;
+	display: flex;
+	justify-content: space-between;
+	gap: 200px;
+}
+.hey{height: 80px;}
 </style>
