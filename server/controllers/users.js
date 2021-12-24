@@ -15,7 +15,7 @@ module.exports={
             }
         );
     },
-   find_all : (result) => {
+   find_all: (result) => {
     db.query("SELECT * FROM users", (err, results) => {             
         if(err) {
             console.log(err);

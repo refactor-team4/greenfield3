@@ -1,4 +1,5 @@
 <template>
+	
   <div class="login" style="background-image: url('assets/img/home_img/mountain.jpg');height:100vh"  >
     
 
@@ -39,7 +40,7 @@
 <script>
 import axios from 'axios';
 export default {
-  name: "Login",
+	name: "Login",
   props: {
     msg: String,
   },

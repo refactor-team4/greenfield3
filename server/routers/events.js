@@ -1,16 +1,16 @@
 const express =require("express")
 const router = express.Router()
-const ProductsController= require("../controllers/products")
+const eventsController= require("../controllers/events")
 
 router.route("/add")
-.post(ProductsController.PostOne);
+.post(eventsController.PostOne);
 
 
 router.route("/fetch")
-.get(ProductsController.GetAll);
+.get(eventsController.GetAll);
 
 router.route("/delete/:name")
-.delete(ProductsController.delete);
+.delete(eventsController.delete);
 
 
 

@@ -2,6 +2,12 @@ DROP DATABASE IF EXISTS youcamp;
 CREATE DATABASE youcamp;
 USE youcamp;
 
+-- CREATE TABLE test (
+--   userId int  NOT NULL AUTO_INCREMENT ,
+--   userName varchar(255),
+--   PRIMARY KEY(userId)
+-- );
+-- $ mysql -u root -p <db/schema.sql
 CREATE TABLE users (
   userId int NOT NULL AUTO_INCREMENT ,
   userName varchar (255),
@@ -15,11 +21,17 @@ CREATE TABLE users (
   password varchar(255),
   PRIMARY KEY (userId)
 );
+CREATE TABLE admins (
+    userName varchar(255) ,
+    password varchar(255) 
+
+);
+
 CREATE TABLE products (
   productId int NOT NULL AUTO_INCREMENT ,
   productName varchar(255),
-  price int ,
-  img varchar(5000),
+  price varchar(255) ,
+  img varchar(255),
   buyerId int ,
   ownerId int(8),
   createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -41,15 +53,27 @@ CREATE TABLE posts (
     REFERENCES users (userId)
     ON DELETE CASCADE
 );
+
+CREATE TABLE events (
+  productId int NOT NULL AUTO_INCREMENT ,
+  eventName varchar(255),
+  description varchar(255),
+  price varchar(255) ,
+  img varchar(255),
+  time varchar(255),
+  buyerId int ,
+  ownerId int(8),
+  createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (ownerId) REFERENCES users(userId),
+  FOREIGN KEY (buyerId) REFERENCES users(userId),
+  PRIMARY KEY (productId)
+);
+
 CREATE TABLE comments (
   commentId int NOT NULL AUTO_INCREMENT ,
   content varchar(10000),
-<<<<<<< HEAD
-  commenter int(8),
-=======
   posterUserName varchar(50),
   posterPicture varchar(1000),
->>>>>>> 306b03e100a78f30cdd907965f4211404285bc95
   postId int ,
   createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (commentId),
