@@ -40,8 +40,8 @@
 				<div class="carousel-caption center-txt">
 					<h1 class="main-header">Enjoy Adventure</h1>	
 					<hr>
-					<p class="sub-header">Wander Exotic places and without getting lost.</p>
-					<a href="#" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore Trips</a>
+					<p class="sub-header">Here you can really make your self happy</p>
+					<a href="footer" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore More</a>
 				</div>
 			</div>
 

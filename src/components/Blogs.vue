@@ -48,12 +48,11 @@
 
         <section
             class="page-img"
-            style="background-image: url('assets/img/home_img/mountain.jpg')"
-        >
+            style="background-image: url('assets/img/home_img/mountain.jpg')">
             <div class="page-img-txt container">
                 <div class="row">
                     <div class="col-sm-8">
-                        <h1 class="main-head">Blog List</h1>
+                        <h1 class="main-head">Blogs List</h1>
                     </div>
                 </div>
             </div>
@@ -78,7 +77,7 @@
                                         <span class="italic">By</span>
                                         &nbsp;
                                         <a href="#" rel="author">
-                                            Aaron D. Cullen
+                                            {{item.userName}}
                                         </a>
                                         <span class="dot">·</span>
                                         <span class="updated">
@@ -94,11 +93,11 @@
                                     </p>
                                 </header>
                                 <div class="post-excerpt">
-                                    {{ item.content}}
+                                     {{ item.content.slice(0, 248) }}
                                     <span id="span">read more ...</span>
                                 </div>
 
-                                <router-link to="/Singleblog">
+                                <router-link :to="`/blogs/${item.postId}`">
                                     <span
                                         class="btn btn-primary hvr-sweep-to-right"
                                     >
@@ -111,8 +110,8 @@
 
                     <div v-if="initial" class="col-sm-8">
                         <article
-                            v-for="(item, index) in Blogs"
-                            :key="index"
+                            v-for="item in Blogs"
+                            :key="item.id"
                             class="post-list full-img"
                         >
                             <img class="post-img" v-bind:src="item.imgUrl" />
@@ -125,8 +124,8 @@
                                     <p class="byline author vcard">
                                         <span class="italic">By</span>
                                         &nbsp;
-                                        <a href="#" rel="author">
-                                            Aaron D. Cullen
+                                        <a  rel="author">
+                                            {{item.userName}}
                                         </a>
                                         <span class="dot">·</span>
                                         <span class="updated">
@@ -142,11 +141,11 @@
                                     </p>
                                 </header>
                                 <div class="post-excerpt">
-                                    {{ item.content.slice(0, 248) }}
+                                      {{ item.content.slice(0, 248) }}
                                     <span id="span">read more ...</span>
                                 </div>
 
-                                <router-link to="/Singleblog">
+                                <router-link :to="`/blogs/${item.postId}/${item.userId}`">
                                     <span
                                         class="btn btn-primary hvr-sweep-to-right"
                                     >
@@ -359,10 +358,13 @@
 import axios from "axios";
 import moment from "moment";
 export default {
-    name: "Blogs",
-
-
-    data() {
+  name: 'Blogs',
+  
+  props: ['data'],
+    // mounted(){
+	// console.log('userdata',JSON.parse(this.data))
+    // },
+    data(){
         return {
             initial: true,
             searched: false,
@@ -374,7 +376,7 @@ export default {
             createdAt: "",
             Blogs: [],
             SearchedBlogs: [],
-            searchedPlace: "",
+            searchedPlace: ""
         };
     },
 
@@ -387,6 +389,7 @@ export default {
                 .get("http://localhost:5000/blogs/getAll")
                 .then(({ data }) => {
                     this.Blogs = { data }.data;
+                    console.log({ data }.data);
                     console.log("blogs :", this.Blogs);
                 })
                 .catch((err) => console.error(err));
@@ -415,7 +418,7 @@ export default {
                 imgUrl: this.ImgUrl,
                 title: this.Title,
                 place: this.Place,
-                userId: "55555",
+                ownerId: 1,
             };
             console.log("post :", post);
             axios
@@ -431,18 +434,17 @@ export default {
             console.log(searchedPlace);
             axios
                 .get(`http://localhost:5000/blogs/searchBlogs/${searchedPlace}`)
-                .then(({data}) => {
+                .then(({ data }) => {
                     this.SearchedBlogs = { data }.data;
-					this.searched=!this.searched
-					this.initial=!this.initial
-					console.log('searchedBlogs :', this.SearchedBlogs)
+                    this.searched = !this.searched;
+                    this.initial = !this.initial;
+                    console.log("searchedBlogs :", this.SearchedBlogs);
                 })
                 .catch((err) => console.log(err));
         },
     },
     created() {
         this.fetchData();
-		
     },
 };
 </script>
