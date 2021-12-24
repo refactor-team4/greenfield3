@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import {createRouter , createWebHashHistory} from 'vue-router'
+import {createRouter , createMemoryHistory} from 'vue-router'
 import HomePage from './components/HomePage.vue'
 import Login from './components/Login.vue'
 import Events from './components/Events.vue'
@@ -11,6 +11,8 @@ import Signup from './components/Signup.vue'
 import AdminLogin from './components/AdminLogin.vue'
 import ProductsAdmin from './components/ProductsAdmin.vue'
 import EventsAdmin from './components/EventsAdmin'
+import editprofile from './components/editprofile.vue'
+import myprofile from './components/myprofile.vue'
 
 const routes = [
   { path: "/", name: "HomePage", component: HomePage },
@@ -28,14 +30,17 @@ const routes = [
       props: true,
       meta: { title: "ProductsAdmin" },
       component: ProductsAdmin
-    }
+    },
+    { path: "/myprofile", name: "myprofile", component: myprofile},
+    { path: "/editprofile", name: "editprofile", component: editprofile}
   
 
 ];
 
+
 const router = createRouter({
-  history: createWebHashHistory(process.env.BASE_URL),
-  routes,
+    history: createMemoryHistory(process.env.BASE_URL),
+    routes,
 });
 
-createApp(App).use(router).mount("#app")
+createApp(App).use(router).mount("#app");
