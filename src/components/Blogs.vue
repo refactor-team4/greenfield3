@@ -48,8 +48,7 @@
 
         <section
             class="page-img"
-            style="background-image: url('assets/img/home_img/mountain.jpg')"
-        >
+            style="background-image: url('assets/img/home_img/mountain.jpg')">
             <div class="page-img-txt container">
                 <div class="row">
                     <div class="col-sm-8">
@@ -359,10 +358,13 @@
 import axios from "axios";
 import moment from "moment";
 export default {
-    name: "Blogs",
-
-
-    data() {
+  name: 'Blogs',
+  
+  props: ['data'],
+    // mounted(){
+	// console.log(JSON.parse(this.data))
+    // },
+    data(){
         return {
             initial: true,
             searched: false,
@@ -374,7 +376,7 @@ export default {
             createdAt: "",
             Blogs: [],
             SearchedBlogs: [],
-            searchedPlace: "",
+            searchedPlace: ""
         };
     },
 

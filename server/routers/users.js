@@ -4,8 +4,10 @@ const UsersController= require("../controllers/users")
 
 
 
-
-
+router.route("/Singup")
+.post(UsersController.Signup);
+router.route("/Login")
+.post(UsersController.Login)
 
 
 
