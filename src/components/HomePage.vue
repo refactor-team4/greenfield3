@@ -36,13 +36,64 @@
 	
 	<div class="carousel slide carousel-fade full-height stick-top">
 		<div class="carousel-inner">
-			<div class="item with-overlay active" style="background-image: url('assets/img/trip_detail/4.jpg');">
+			<div class="item with-overlay active" style="background-image: url('assets/img/trip_detail/7.jpg');">
 				<div class="carousel-caption center-txt">
 					<h1 class="main-header">MY CAMP ADVENTURE</h1>	
 					<hr>
 					<p class="sub-header">We are here to make your trip better join us to make your self more happy</p>
-					<a href="footer" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore More</a>
+					<a href="about-maycamp" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore More</a>
 				</div>
+			</div>
+
+		</div>
+	</div>	
+		<div class="carousel slide carousel-fade full-height stick-top" id="about-maycamp">
+		<div class="carousel-inner">
+			<div class='about'>
+			<div class="section-title center">
+  <h3 id="bobii">KNOW MORE ABOUT MY CAMP</h3>
+</div>		
+<div class="paragraph" >
+<h4>
+<p  style="text-align: center" >	We’re incredibly thankful you value the my camp experience and your camping. We’re thankful you carry on long-standing traditions and create new ones of your own. We’re grateful for the shared memories and friendships you’ve forged. We love every camp moment laughing, playing and growing with you!</p>
+</h4>
+</div>
+
+ <div> 
+<div class="section-title center">
+  <h3 id="bobii" style=" margin-left:440px" > MY CAMP IS THE PLACE</h3>
+</div>		
+<div class="paragraph" >
+<h4>
+<p  style="text-align: center" >--for setting up the meeting and to know more about other people life experience-- <br>
+ --that you can see and react on the others posts in places may you didn't discover yet--<br>-- that you can buy and sell the camping material if you do really  like something here-- <br>
+
+	</p>
+</h4>
+</div>
+ </div>	 
+ <div> 
+<div class="section-title center">
+  <h3 id="bobii" style=" margin-left:500px" > MY CAMP RULES</h3>
+</div>		
+<div class="paragraph" >
+<h4>
+<p  style="text-align: center" > - If you act weird or send trolling stuff you will be banned><br>- Admins have the rigth to check your data (of the ones that you agree on)<br>- About the buying and selling , We have 2% of every product priceOur duty is: <br>- We always try to update and facilitate everything in our web site<br>- protect you and your informations from attacks<br>- Make sure you have fun !
+
+	</p>
+</h4>
+</div>
+ </div>	 
+
+			</div>
+
+		</div>
+	</div>	
+
+	<div class="carousel slide carousel-fade full-height stick-top">
+		<div class="carousel-inner">
+			<div class="item with-overlay active" style="background-image: url('assets/img/trip_detail/11.jpg');">
+					
 			</div>
 
 		</div>
