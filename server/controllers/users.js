@@ -13,7 +13,8 @@ module.exports={
     });   
 },
 find_One:(id, result) => {
-    id=req.param.id
+    // eslint-disable-next-line no-undef
+    id = req.param.id
     db.query("SELECT * FROM users WHERE users_id = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
@@ -25,17 +26,19 @@ find_One:(id, result) => {
 },
 update_One:(data, id, result) => {
     console.log("");
-    // id=req.param.id
-    // db.query("UPDATE product SET product_name = ?, product_price = ? WHERE product_id = ?", [data.product_name, data.product_price, id], (err, results) => {             
-    //     if(err) {
-    //         console.log(err);
-    //         result(err, null);
-    //     } else {
-    //         result(null, results);
-    //     }
-    // });   
+    // eslint-disable-next-line no-undef
+    id=req.param.id
+    db.query("UPDATE product SET product_name = ?, product_price = ? WHERE product_id = ?", [data.product_name, data.product_price, id], (err, results) => {             
+        if(err) {
+            console.log(err);
+            result(err, null);
+        } else {
+            result(null, results);
+        }
+    });   
 },
 remove_One:(id, result) => {
+    // eslint-disable-next-line no-undef
     id=req.param.id
     db.query("DELETE FROM product WHERE product_id = ?", [id], (err, results) => {             
         if(err) {
