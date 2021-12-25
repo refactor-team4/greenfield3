@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import {createRouter , createMemoryHistory} from 'vue-router'
+import {createRouter , createWebHashHistory} from 'vue-router'
 import HomePage from './components/HomePage.vue'
 import Login from './components/Login.vue'
 import Events from './components/Events.vue'
@@ -15,8 +15,8 @@ import editprofile from './components/editprofile.vue'
 import myprofile from './components/myprofile.vue'
 
 const routes = [
+  { path: "/EventsAdmin", name: "EventsAdmin", component: EventsAdmin },
   { path: "/", name: "HomePage", component: HomePage },
-  { path: "/EventsAdmin", name: "HomePage", component: EventsAdmin },
   { path: "/login", name: "Login", component: Login },
   { path: "/events", name: "Events", component: Events},
   { path: "/products", name: "Products", component: Products},
@@ -39,7 +39,7 @@ const routes = [
 
 
 const router = createRouter({
-    history: createMemoryHistory(process.env.BASE_URL),
+    history: createWebHashHistory(process.env.BASE_URL),
     routes,
 });
 

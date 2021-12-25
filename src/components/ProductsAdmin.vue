@@ -181,7 +181,7 @@
           :key="index"
           class="post-list full-img"
         >
-          <img class="post-img" v-bind:src="item.imgUrl" />
+          <img class="post-img" v-bind:src="item.img" />
           <div class="post-summary">
             <header>
               <h4 class="post-title">
