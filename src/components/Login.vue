@@ -1,4 +1,5 @@
 <template>
+
     <div
         class="login"
         style="
@@ -42,6 +43,10 @@
                             </div>
                         </div>
 
+  <div class="login" style="background-image: url('assets/img/home_img/mountain.jpg');height:100vh"  >
+    
+
+
                         <button
                             type="submit"
                             class="btn btn-primary hvr-sweep-to-right"
@@ -65,6 +70,7 @@
 <script>
 import axios from "axios";
 export default {
+
     name: "Login",
     props: {
         msg: String,
@@ -105,6 +111,7 @@ export default {
         },
     },
 };
+
 </script>
 
 <style scoped></style>

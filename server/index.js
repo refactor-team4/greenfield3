@@ -12,10 +12,12 @@ const comments=require("./routers/comments")
 const posts=require("./routers/posts")
 const users=require("./routers/users")
 const products=require("./routers/products")
+const admin=require("./routers/admin")
+const blogs=require("./routers/blogs")
+const events=require("./routers/events")
 const editprofile=require("./routers/editprofile")
 const editpassword=require("./routers/editpassword")
-const blogs=require("./routers/blogs")
-const myprofile=require("./routers/profile")
+// const myprofile=require("./routers/profile")
 
 /******************** Middleware ********************/
 
@@ -29,9 +31,11 @@ app.use("/users", users)
 app.use("/comments", comments)
 app.use("/posts", posts)
 app.use("/products", products)
+app.use("/admin", admin)
+app.use("/events", events)
 app.use("/editprofile", editprofile)
 app.use("/editpassword", editpassword)
-app.use("/editpassword", myprofile)
+// app.use("/editpassword", myprofile)
 app.use("/blogs", blogs)
 /**************** Listening Requests ****************/
 var port=5000

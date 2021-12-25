@@ -15,6 +15,7 @@ module.exports={
             }
         );
     },
+
     GetUserDetailsByUserName: (req, res) => {
         console.log('sssssssssssss :', req.body)
         db.query(
