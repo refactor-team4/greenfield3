@@ -15,6 +15,20 @@ module.exports={
             }
         );
     },
+    GetUserDetailsByUserName: (req, res) => {
+        console.log('sssssssssssss :', req.body)
+        db.query(
+            "select * from users where userName= ?" ,
+            [req.body],
+            (err, result) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.send(result[0]);
+                }
+            }
+        );
+    },
    find_all : (result) => {
     db.query("SELECT * FROM users", (err, results) => {             
         if(err) {
@@ -38,15 +52,15 @@ find_One:(id, result) => {
 },
 update_One:(data, id, result) => {
     console.log("");
-    // id=req.param.id
-    // db.query("UPDATE product SET product_name = ?, product_price = ? WHERE product_id = ?", [data.product_name, data.product_price, id], (err, results) => {             
-    //     if(err) {
-    //         console.log(err);
-    //         result(err, null);
-    //     } else {
-    //         result(null, results);
-    //     }
-    // });   
+    id=req.param.id
+    db.query("UPDATE product SET product_name = ?, product_price = ? WHERE product_id = ?", [data.product_name, data.product_price, id], (err, results) => {             
+        if(err) {
+            console.log(err);
+            result(err, null);
+        } else {
+            result(null, results);
+        }
+    });   
 },
 remove_One:(id, result) => {
     id=req.param.id
