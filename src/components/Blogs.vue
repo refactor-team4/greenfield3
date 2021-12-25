@@ -48,7 +48,8 @@
 
         <section
             class="page-img"
-            style="background-image: url('assets/img/home_img/mountain.jpg')">
+            style="background-image: url('assets/img/home_img/mountain.jpg')"
+        >
             <div class="page-img-txt container">
                 <div class="row">
                     <div class="col-sm-8">
@@ -77,7 +78,7 @@
                                         <span class="italic">By</span>
                                         &nbsp;
                                         <a href="#" rel="author">
-                                            {{item.userName}}
+                                            {{ item.userName }}
                                         </a>
                                         <span class="dot">·</span>
                                         <span class="updated">
@@ -93,11 +94,11 @@
                                     </p>
                                 </header>
                                 <div class="post-excerpt">
-                                     {{ item.content.slice(0, 248) }}
+                                    {{ item.content.slice(0, 248) }}
                                     <span id="span">read more ...</span>
                                 </div>
 
-                                <router-link :to="`/blogs/${item.postId}`">
+                                <router-link :to="`/blogDetails/${item.postId}/${item.userId}/${this.data}`">
                                     <span
                                         class="btn btn-primary hvr-sweep-to-right"
                                     >
@@ -124,8 +125,8 @@
                                     <p class="byline author vcard">
                                         <span class="italic">By</span>
                                         &nbsp;
-                                        <a  rel="author">
-                                            {{item.userName}}
+                                        <a rel="author">
+                                            {{ item.userName }}
                                         </a>
                                         <span class="dot">·</span>
                                         <span class="updated">
@@ -141,11 +142,13 @@
                                     </p>
                                 </header>
                                 <div class="post-excerpt">
-                                      {{ item.content.slice(0, 248) }}
+                                    {{ item.content.slice(0, 248) }}
                                     <span id="span">read more ...</span>
                                 </div>
 
-                                <router-link :to="`/blogs/${item.postId}/${item.userId}`">
+                                <router-link
+                                    :to="`/blogDetails/${item.postId}/${item.userId}/${this.data}`"
+                                >
                                     <span
                                         class="btn btn-primary hvr-sweep-to-right"
                                     >
@@ -358,13 +361,9 @@
 import axios from "axios";
 import moment from "moment";
 export default {
-  name: 'Blogs',
-  
-  props: ['data'],
-    // mounted(){
-	// console.log('userdata',JSON.parse(this.data))
-    // },
-    data(){
+    name: "Blogs",
+    props: ["data"],
+    data() {
         return {
             initial: true,
             searched: false,
@@ -376,10 +375,10 @@ export default {
             createdAt: "",
             Blogs: [],
             SearchedBlogs: [],
-            searchedPlace: ""
+            userData:[],
+            searchedPlace: "",
         };
     },
-
     methods: {
         moment(option) {
             return moment(option).fromNow();
@@ -399,7 +398,6 @@ export default {
             const data = new FormData();
             data.append("file", files[0]);
             data.append("upload_preset", "easy-life");
-
             axios
                 .post(
                     "https://api.cloudinary.com/v1_1/REZmed/image/upload",
@@ -418,7 +416,8 @@ export default {
                 imgUrl: this.ImgUrl,
                 title: this.Title,
                 place: this.Place,
-                ownerId: 1,
+                // ownerId: '1',
+               ownerId: JSON.parse(localStorage.getItem("session")||'').userId,
             };
             console.log("post :", post);
             axios
@@ -445,6 +444,8 @@ export default {
     },
     created() {
         this.fetchData();
+    //    console.log("emchiiiii :", JSON.parse(localStorage.getItem("session")||'')) 
+      
     },
 };
 </script>
