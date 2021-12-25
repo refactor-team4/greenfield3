@@ -2,7 +2,7 @@ const express =require("express")
 const router = express.Router()
 const UsersController= require("../controllers/users")
 router.route('/details/:userId').get(UsersController.GetUserDetails)
-
+router.route('/getUserData').get(UsersController.GetUserDetailsByUserName)
 
 
 router.route("/Singup")

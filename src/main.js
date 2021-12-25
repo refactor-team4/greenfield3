@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import {createRouter , createMemoryHistory} from 'vue-router'
+import {createRouter , createWebHashHistory} from 'vue-router'
 import HomePage from './components/HomePage.vue'
 import Login from './components/Login.vue'
 import Events from './components/Events.vue'
@@ -15,14 +15,24 @@ import editprofile from './components/editprofile.vue'
 import myprofile from './components/myprofile.vue'
 
 const routes = [
-  { path: "/", name: "HomePage", component: HomePage },
-  { path: "/EventsAdmin", name: "HomePage", component: EventsAdmin },
-  { path: "/login", name: "Login", component: Login },
-  { path: "/events", name: "Events", component: Events},
-  { path: "/products", name: "Products", component: Products},
-  { path: "/blogs", name: "Blogs",props:true,meta:{title : "Blogs"}, component: Blogs},
-  { path: "/singleblog", name: "Singleblog", component: Singleblog},
-  { path: "/signup", name: "Signup", component: Signup},
+
+    { path: "/", name: "HomePage", component: HomePage },
+    { path: "/login", name: "Login", component: Login },
+    { path: "/events", name: "Events", component: Events },
+    { path: "/Products", name: "Products", component: Products },
+    { path: "/blogDetails/:id/:userId/:ConnectedId", name: "Singleblog", component: Singleblog },
+    { path: "/signup", name: "Signup", component: Signup },
+    { path: "/ProductsAdmin", name: "ProductsAdmin", component: ProductsAdmin },
+    { path: "/blogs", name: "Blogs",props:true,meta:{title : "Blogs"}, component: Blogs},
+
+
+  { path: "/EventsAdmin", name: "EventsAdmin", component: EventsAdmin },
+
+ 
+
+
+
+
   { path: "/admin", name: "Admin", component: AdminLogin},
 {
       path: "/ProductsAdmin",
@@ -31,6 +41,7 @@ const routes = [
       meta: { title: "ProductsAdmin" },
       component: ProductsAdmin
     },
+
     { path: "/myprofile", name: "myprofile", component: myprofile},
     { path: "/editprofile", name: "editprofile", component: editprofile}
   
@@ -39,7 +50,7 @@ const routes = [
 
 
 const router = createRouter({
-    history: createMemoryHistory(process.env.BASE_URL),
+    history: createWebHashHistory(process.env.BASE_URL),
     routes,
 });
 

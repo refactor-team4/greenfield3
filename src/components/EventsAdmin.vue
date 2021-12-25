@@ -29,34 +29,35 @@
     </header>
   </div>
 <div id="add">
-              <label class="label">Events Name</label>
+              <h4><label class="label">Events Name</label></h4>
               <input
                 class="input"
                 type="text"
                 placeholder="Events Name"
                 v-model="EventsName"
               />
-              <label class="label">Description</label>
+              <h4><label class="label">Description</label></h4>
               <input
                 class="input"
                 type="text"
                 placeholder="Description"
                 v-model="Description"
               />
-               <label class="label">price</label>
+               <h4><label class="label">price</label></h4>
               <input
                 class="input"
                 type="text"
                 placeholder="price"
                 v-model="price"
-              /><label class="label">image</label>
+              />
+              <h4><label class="label">image</label></h4>
               <input
                 class="input"
                 type="text"
                 placeholder="image"
                 v-model="productImg"
               />
-              <label class="label">date</label>
+              <h4><label class="label">date</label></h4>
               <input
                 class="input"
                 type="text"
@@ -182,7 +183,7 @@
               :key="index"
               class="post-list full-img"
             >
-              <img class="post-img" v-bind:src="item.productImg" />
+              <img class="post-img" v-bind:src="item.img" />
               <div class="post-summary">
                 <header>
                   <h4 class="post-title">
