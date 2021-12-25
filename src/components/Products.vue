@@ -208,8 +208,8 @@
             </div>
           </div>
           <div class="col-sm-8">
-            <div class="row item" v-for="(item, index) in this.products" :key="index">
-              <div class="col-sm-12 col-md-6">
+            <div  v-for="(item, index) in this.products" :key="index">
+              <div class="col-sm-12 col-md-6 add">
                 <div class="item-grid">
                   <img
                     class="item-img"
@@ -606,4 +606,7 @@ axios
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+
+</style>

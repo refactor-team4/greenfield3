@@ -606,4 +606,13 @@ axios
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.add{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 5px;
+  top: 400px;
+  left: 100px;}
+</style>
