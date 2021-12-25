@@ -29,21 +29,21 @@
     </header>
   </div>
   <div id="add">
-    <label class="label">Product Name</label>
+    <h4><label class="label">Product Name</label></h4>
     <input
       class="input"
       type="text"
       placeholder="Product Name"
       v-model="productName"
     />
-    <label class="label">img</label>
+    <h4><label class="label">img</label></h4>
     <input
       class="input"
       type="text"
       placeholder="Product img"
       v-model="productImg"
     />
-    <label class="label">Price</label>
+    <h4><label class="label">Price</label></h4>
     <input
       class="input"
       type="text"
@@ -163,7 +163,7 @@
         </div>
         <div id="buttons">
           <router-link to="ProductsAdmin"
-            ><button class="btn btn-primary hvr-sweep-to-right hey">
+            ><button  class="btn btn-primary hvr-sweep-to-right hey">
               access your products page
             </button></router-link
           >
@@ -181,7 +181,7 @@
           :key="index"
           class="post-list full-img"
         >
-          <img class="post-img" v-bind:src="item.imgUrl" />
+          <img class="post-img" v-bind:src="item.img" />
           <div class="post-summary">
             <header>
               <h4 class="post-title">

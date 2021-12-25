@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import {createRouter , createMemoryHistory} from 'vue-router'
+import {createRouter , createWebHashHistory} from 'vue-router'
 import HomePage from './components/HomePage.vue'
 import Login from './components/Login.vue'
 import Events from './components/Events.vue'
@@ -26,7 +26,7 @@ const routes = [
     { path: "/blogs", name: "Blogs",props:true,meta:{title : "Blogs"}, component: Blogs},
 
 
-  { path: "/EventsAdmin", name: "HomePage", component: EventsAdmin },
+  { path: "/EventsAdmin", name: "EventsAdmin", component: EventsAdmin },
 
  
 
@@ -50,7 +50,7 @@ const routes = [
 
 
 const router = createRouter({
-    history: createMemoryHistory(process.env.BASE_URL),
+    history: createWebHashHistory(process.env.BASE_URL),
     routes,
 });
 
